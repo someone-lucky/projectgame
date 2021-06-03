@@ -1,6 +1,9 @@
-#include <iostream>
+#include <SFML/Graphics.hpp>
+
+using namespace sf;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    RenderWindow window(VideoMode(500,500), "Game");
+
     return 0;
 }
