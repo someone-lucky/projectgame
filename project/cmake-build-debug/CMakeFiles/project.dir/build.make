@@ -77,6 +77,7 @@ include CMakeFiles/project.dir/progress.make
 include CMakeFiles/project.dir/flags.make
 
 CMakeFiles/project.dir/main.cpp.obj: CMakeFiles/project.dir/flags.make
+CMakeFiles/project.dir/main.cpp.obj: CMakeFiles/project.dir/includes_CXX.rsp
 CMakeFiles/project.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\66236\CLionProjects\projectgame\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project.dir/main.cpp.obj"
 	C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\main.cpp.obj -c C:\Users\66236\CLionProjects\projectgame\project\main.cpp
@@ -98,6 +99,10 @@ project_EXTERNAL_OBJECTS =
 
 project.exe: CMakeFiles/project.dir/main.cpp.obj
 project.exe: CMakeFiles/project.dir/build.make
+project.exe: C:/Users/66236/Desktop/HW\ +\ Prj/AaP/SFML-2.5.1/lib/libsfml-graphics-s-d.a
+project.exe: C:/Users/66236/Desktop/HW\ +\ Prj/AaP/SFML-2.5.1/lib/libsfml-window-s-d.a
+project.exe: C:/Users/66236/Desktop/HW\ +\ Prj/AaP/SFML-2.5.1/lib/libsfml-system-s-d.a
+project.exe: C:/Users/66236/Desktop/HW\ +\ Prj/AaP/SFML-2.5.1/lib/libfreetype.a
 project.exe: CMakeFiles/project.dir/linklibs.rsp
 project.exe: CMakeFiles/project.dir/objects1.rsp
 project.exe: CMakeFiles/project.dir/link.txt
