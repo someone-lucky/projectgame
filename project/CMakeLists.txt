@@ -7,7 +7,7 @@ set(SFML_STATIC_LIBRARIES TRUE)
 
 add_executable(test1 main.cpp)
 
-set(SFML_DIR "C:\\Users\\66236\\Desktop\\HW + Prj\\AaP\\SFML-2.5.1\\lib\\cmake\\SFML")
+set(SFML_DIR "C:\\Users\\66236\\Desktop\\HW + Prj\\AaP\\SFML-2.5.1\\lib\\cmake\\SFML")  #поменять на свой путь к SFML
 
 target_link_libraries(test1 sfml-graphics)
 
