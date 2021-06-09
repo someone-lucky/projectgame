@@ -7,17 +7,38 @@ int zemlya=500;
 class hero {
 public:
     float vx,vy,now;
-    FloatRect rect;
+    FloatRect coord;
     Sprite spr;
     bool on;
 
     hero(Texture & image){
         vx=vx=0;
         now=0;
-        rect = FloatRect(15,15,50,70);
         spr.setTexture(image);
+        spr.setTextureRect(IntRect(10,15,50,65));
+        coord = FloatRect(10,15,50,65);
     }
 
+    void checkup(float timer){
+        coord.left += vx*timer;
+        if (!on)
+            vy=vy*0.00001*timer;
+        on = false;
+        if (coord.top > zemlya) {
+            coord.top = zemlya;
+            vy = 0;
+            on = true;
+        }
+        now += 0.00001*timer;
+        if (now > 4)
+            now -= 4;
+        if (vx>0)
+            spr.setTextureRect(IntRect(10+50*int(now),15,50,65));
+        if (vx<0)
+            spr.setTextureRect(IntRect(60+50*int(now),15,-50,65));
+        spr.setPosition(coord.left,coord.top);
+        vx=0;
+    }
 
 };
 
@@ -28,17 +49,12 @@ int main() {
     Image heroim;
     heroim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\main.png");
 
-    Texture hero;
-    hero.loadFromImage(heroim);
+    Texture texture;
+    texture.loadFromImage(heroim);
 
-    Sprite h;
-    h.setTexture(hero);
-    h.setTextureRect(IntRect(10,15,50,65));
-    h.setPosition(50,100);
+    hero h(texture);
 
     Clock tik;
-
-    float now=0;
 
     while (scrn.isOpen()){
         float timer = tik.getElapsedTime().asMicroseconds();
@@ -50,24 +66,20 @@ int main() {
         }
         scrn.setActive();
         if (Keyboard::isKeyPressed(Keyboard::Right)){
-            h.move(0.0002*timer,0);
-            now += 0.00001*timer;
-            if (now > 4)
-                now -= 4;
-            h.setTextureRect(IntRect(10+50*int(now),15,50,65));
+            h.vx=0.0002;
         }
         if (Keyboard::isKeyPressed(Keyboard::Left)){
-            h.move(-0.0002*timer,0);
-            now += 0.00001*timer;
-            if (now > 4)
-                now -= 4;
-            h.setTextureRect(IntRect(60+50*int(now),15,-50,65));
+            h.vx=-0.0002;
         }
         if (Keyboard::isKeyPressed(Keyboard::Up)){
-            h.move(0,-0.1);
+            if (h.on){
+                h.vy=-0.0007;
+                h.on= false;
+            }
         }
+        h.checkup(timer);
         scrn.clear();
-        scrn.draw(h);
+        scrn.draw(h.spr);
         scrn.display();
     }
     return 0;
