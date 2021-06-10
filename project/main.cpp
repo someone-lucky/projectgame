@@ -2,18 +2,30 @@
 
 using namespace sf;
 
-int zemlya=400;
-const int hm = 11;
+const int hm = 23;
 const int lm = 36;
+float camx=0, camy=23*32-500;
 
 String  FrameMap[hm] {
-"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-"A                             A    A",
-"A                             A    A",
-"A                            A     A",
-"A                           A      A",
-"A                          A       A",
-"A                         A        A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A                                  A",
+"A        A  A             A        A",
 "A                        A         A",
 "A                                  A",
 "A                                  A",
@@ -31,8 +43,8 @@ public:
         vx=vy=0;
         now=0;
         spr.setTexture(image);
-        spr.setTextureRect(IntRect(10,15,50,65));
-        coord = FloatRect(100,100,50,65);
+        spr.setTextureRect(IntRect(10,15,50,64));
+        coord = FloatRect(64,32*20,50,64);
     }
     void StuckX(){
         for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
@@ -49,13 +61,13 @@ public:
         for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
             for (int j=coord.left/32; j<(coord.left+coord.width)/32; j++){
                 if (FrameMap[i][j] == 'A'){
-                    if (vy>0) {
-                        coord.top = i * 32 - coord.height;
+                    if (vy>=0) {
+                        coord.top = i*32-coord.height;
                         vy = 0;
                         on = true;
                     }
                     if (vy<0) {
-                        coord.left = i * 32 + 32;
+                        coord.top = i*32+32;
                         vy = 0;
                     }
                 }
@@ -68,16 +80,16 @@ public:
         if (!on)
             vy=vy+0.0000000005*timer;
         coord.top += vy*timer;
-        //on=false;
+        on=false;
         StuckY();
         now += 0.00001*timer;
         if (now > 4)
             now -= 4;
         if (vx>0)
-            spr.setTextureRect(IntRect(10+50*int(now),15,50,65));
+            spr.setTextureRect(IntRect(10+50*int(now),15,50,64));
         if (vx<0)
-            spr.setTextureRect(IntRect(60+50*int(now),15,-50,65));
-        spr.setPosition(coord.left,coord.top);
+            spr.setTextureRect(IntRect(60+50*int(now),15,-50,64));
+        spr.setPosition(coord.left - camx,coord.top - camy);
         vx=0;
     }
 
@@ -126,6 +138,10 @@ int main() {
             }
         }
         h.checkup(timer);
+        if ((h.coord.left>250) && (h.coord.left<36*32-250))
+            camx = h.coord.left - 500/2;
+        if (h.coord.top<=23*32-250)
+            camy = h.coord.top - 500/2;
         scrn.clear(Color::White);
         for (int i=0; i<hm; i++)
             for (int j=0; j<lm; j++){
@@ -133,7 +149,7 @@ int main() {
                     bs1.setTextureRect(IntRect(0,0,32,32));
                 if (FrameMap[i][j] == ' ')
                     continue;
-                bs1.setPosition(j*32,i*32);
+                bs1.setPosition(j*32 - camx,i*32-camy);
                 scrn.draw(bs1);
             }
         scrn.draw(h.spr);
