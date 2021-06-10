@@ -66,6 +66,7 @@ int main() {
 
     Image heroim;
     heroim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\main.png");
+    heroim.createMaskFromColor(Color(229, 159, 159));
 
     Texture texture;
     texture.loadFromImage(heroim);
