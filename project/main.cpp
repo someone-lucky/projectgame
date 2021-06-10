@@ -2,7 +2,7 @@
 
 using namespace sf;
 
-int zemlya=500;
+int zemlya=400;
 
 class hero {
 public:
@@ -12,23 +12,26 @@ public:
     bool on;
 
     hero(Texture & image){
-        vx=vx=0;
+        vx=vy=0;
         now=0;
         spr.setTexture(image);
         spr.setTextureRect(IntRect(10,15,50,65));
-        coord = FloatRect(10,15,50,65);
+        coord = FloatRect(0,zemlya+65,50,65);
     }
 
     void checkup(float timer){
         coord.left += vx*timer;
         if (!on)
-            vy=vy*0.00001*timer;
-        on = false;
-        if (coord.top > zemlya) {
-            coord.top = zemlya;
+            vy=vy+0.0000000005*timer;
+        coord.top += vy*timer;
+        //on = false;
+        if (coord.top > zemlya - coord.height) {
+            coord.top = zemlya - coord.height;
             vy = 0;
             on = true;
         }
+        else
+            on = false;
         now += 0.00001*timer;
         if (now > 4)
             now -= 4;
@@ -73,8 +76,8 @@ int main() {
         }
         if (Keyboard::isKeyPressed(Keyboard::Up)){
             if (h.on){
-                h.vy=-0.0007;
-                h.on= false;
+                h.vy=-0.00035;
+                h.on = false;
             }
         }
         h.checkup(timer);
