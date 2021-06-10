@@ -24,9 +24,9 @@ String  FrameMap[hm] {
         "A                                  A",
         "A                                  A",
         "A                                  A",
-        "A        A  A             A        A",
-        "A                        A         A",
+        "A        D  D             D        A",
+        "A                        D         A",
         "A                                  A",
         "A                                  A",
-        "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "CBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBC",
 };
