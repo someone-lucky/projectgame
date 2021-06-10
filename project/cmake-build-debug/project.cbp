@@ -87,6 +87,9 @@
 		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/main.cpp">
 			<Option target="project"/>
 		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/map.h">
+			<Option target="project"/>
+		</Unit>
 		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

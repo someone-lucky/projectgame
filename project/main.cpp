@@ -1,36 +1,10 @@
 #include <SFML/Graphics.hpp>
+#include "map.h"
 
 using namespace sf;
 
-const int hm = 23;
-const int lm = 36;
 float camx=0, camy=23*32-500;
 
-String  FrameMap[hm] {
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A                                  A",
-"A        A  A             A        A",
-"A                        A         A",
-"A                                  A",
-"A                                  A",
-"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-};
 
 class hero {
 public:
