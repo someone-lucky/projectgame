@@ -3,6 +3,22 @@
 using namespace sf;
 
 int zemlya=400;
+const int hm = 11;
+const int lm = 36;
+
+String  FrameMap[hm] {
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+"A                             A    A",
+"A                             A    A",
+"A                            A     A",
+"A                           A      A",
+"A                          A       A",
+"A                         A        A",
+"A                        A         A",
+"A                                  A",
+"A                                  A",
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+};
 
 class hero {
 public:
@@ -24,7 +40,6 @@ public:
         if (!on)
             vy=vy+0.0000000005*timer;
         coord.top += vy*timer;
-        //on = false;
         if (coord.top > zemlya - coord.height) {
             coord.top = zemlya - coord.height;
             vy = 0;
@@ -57,6 +72,8 @@ int main() {
 
     hero h(texture);
 
+    RectangleShape block;
+
     Clock tik;
 
     while (scrn.isOpen()){
@@ -81,7 +98,17 @@ int main() {
             }
         }
         h.checkup(timer);
-        scrn.clear();
+        scrn.clear(Color::White);
+        for (int i=0; i<hm; i++)
+            for (int j=0; j<lm; j++){
+                if (FrameMap[i][j] == 'A')
+                    block.setFillColor(Color::Black);
+                block.setSize({32.0,32.0});
+                if (FrameMap[i][j] == ' ')
+                    continue;
+                block.setPosition(j*32,i*32);
+                scrn.draw(block);
+            }
         scrn.draw(h.spr);
         scrn.display();
     }
