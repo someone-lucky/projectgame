@@ -23,7 +23,7 @@ public:
     void StuckX(){
         for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
             for (int j=coord.left/32; j<(coord.left+coord.width)/32; j++){
-                if (FrameMap[i][j] == 'A' || FrameMap[i][j] == 'C'){
+                if (FrameMap[i][j] == 'A' || FrameMap[i][j] == 'D' || FrameMap[i][j] == 'C'){
                     if (vx>0)
                         coord.left=j*32-coord.width;
                     if (vx<0)
@@ -34,7 +34,7 @@ public:
     void StuckY(){
         for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
             for (int j=coord.left/32; j<(coord.left+coord.width)/32; j++){
-                if (FrameMap[i][j] == 'B' || FrameMap[i][j] == 'D'){
+                if (FrameMap[i][j] == 'B' || FrameMap[i][j] == 'C' || FrameMap[i][j] == 'D'){
                     if (vy>=0) {
                         coord.top = i*32-coord.height;
                         vy = 0;
@@ -68,7 +68,7 @@ public:
     }
 
 };
-/*class enemy {
+class enemy {
 public:
     float vx, now;
     FloatRect coord;
@@ -107,7 +107,7 @@ public:
         spr.setPosition(coord.left - camx, coord.top - camy);
         vx = 0;
     }
-};*/
+};
 
 
 int main() {
@@ -116,25 +116,16 @@ int main() {
     Image heroim;
     heroim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\main.png");
     heroim.createMaskFromColor(Color(229, 159, 159));
-    Image block1,block2,block3,block4;
-    block1.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\IndustrialTile_05.png");
-    block2.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\IndustrialTile_61.png");
-    block3.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\IndustrialTile_70.png");
-    block4.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\IndustrialTile_18.png");
-    block4.createMaskFromColor(Color(255, 255, 255));
+    Image block1;
+    block1.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\Industrial.png");
+    block1.createMaskFromColor(Color(255, 255, 255));
 
     Texture texture;
     texture.loadFromImage(heroim);
-    Texture t1,t2,t3,t4;
+    Texture t1;
     t1.loadFromImage(block1);
-    t2.loadFromImage(block2);
-    t3.loadFromImage(block3);
-    t4.loadFromImage(block4);
     Sprite bs1,bs2,bs3,bs4;
     bs1.setTexture(t1);
-    bs2.setTexture(t2);
-    bs3.setTexture(t3);
-    bs4.setTexture(t4);
 
     hero h(texture);
 
@@ -169,30 +160,18 @@ int main() {
         scrn.clear(Color::White);
         for (int i=0; i<hm; i++)
             for (int j=0; j<lm; j++){
-                if (FrameMap[i][j] == 'A') {
-                    bs2.setTextureRect(IntRect(0, 0, 32, 32));
-                    bs2.setPosition(j * 32 - camx, i * 32 - camy);
-                    scrn.draw(bs2);
-                }
-                if (FrameMap[i][j] == 'B'){
+                if (FrameMap[i][j] == 'A')
+                    bs1.setTextureRect(IntRect(64,0,32,32));
+                if (FrameMap[i][j] == 'B')
                     bs1.setTextureRect(IntRect(0,0,32,32));
-                    bs1.setPosition(j*32 - camx,i*32-camy);
-                    scrn.draw(bs1);
-                }
                 if (FrameMap[i][j] == 'C')
-                    bs3.setTextureRect(IntRect(0,0,32,32));
+                    bs1.setTextureRect(IntRect(96,0,32,32));
                 if (FrameMap[i][j] == 'D')
-                    bs4.setTextureRect(IntRect(0,0,32,32));
+                    bs1.setTextureRect(IntRect(32,0,32,32));
                 if (FrameMap[i][j] == ' ')
                     continue;
-
-
-                bs3.setPosition(j*32 - camx,i*32-camy);
-                bs4.setPosition(j*32 - camx,i*32-camy);
-
-
-                scrn.draw(bs3);
-                scrn.draw(bs4);
+                bs1.setPosition(j*32 - camx,i*32-camy);
+                scrn.draw(bs1);
             }
         scrn.draw(h.spr);
         scrn.display();
