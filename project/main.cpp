@@ -7,10 +7,13 @@ public:
     float vx,vy,now;
     FloatRect coord;
     Sprite spr;
-    bool on;
+    bool on,end;
+    int health;
     hero(Texture & image){
         vx=vy=0;
+        health=100;
         now=0;
+        end = false;
         spr.setTexture(image);
         spr.setTextureRect(IntRect(10,15,50,64));
         coord = FloatRect(64,32*20,50,64);
@@ -43,22 +46,24 @@ public:
             }
     }
     void checkup(float timer){
-        coord.left += vx*timer;
-        StuckX();
-        if (!on)
-            vy=vy+0.0000000005*timer;
-        coord.top += vy*timer;
-        on=false;
-        StuckY();
-        now += 0.00001*timer;
-        if (now > 4)
-            now -= 4;
-        if (vx>0)
-            spr.setTextureRect(IntRect(10+50*int(now),15,50,64));
-        if (vx<0)
-            spr.setTextureRect(IntRect(60+50*int(now),15,-50,64));
-        spr.setPosition(coord.left - camx,coord.top - camy);
-        vx=0;
+        if (!end) {
+            coord.left += vx * timer;
+            StuckX();
+            if (!on)
+                vy = vy + 0.0000000005 * timer;
+            coord.top += vy * timer;
+            on = false;
+            StuckY();
+            now += 0.00001 * timer;
+            if (now > 4)
+                now -= 4;
+            if (vx > 0)
+                spr.setTextureRect(IntRect(10 + 50 * int(now), 15, 50, 64));
+            if (vx < 0)
+                spr.setTextureRect(IntRect(60 + 50 * int(now), 15, -50, 64));
+            spr.setPosition(coord.left - camx, coord.top - camy);
+            vx = 0;
+        }
     }
 };
 class enemy {
@@ -74,7 +79,7 @@ public:
         living = true;
         spr.setTexture(image);
         spr.setTextureRect(IntRect(0, 10, 27, 38));
-        coord = FloatRect(64, 32*20+27, 27, 38);
+        coord = FloatRect(32*10, 32*20+27, 27, 38);
     }
     void StuckX(){
         for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
@@ -111,7 +116,6 @@ public:
 };
 int main() {
     RenderWindow scrn(VideoMode(500,500), "Game");
-
     Image heroim, evilim;
     heroim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\main.png");
     heroim.createMaskFromColor(Color(229, 159, 159));
@@ -175,6 +179,20 @@ int main() {
             }
         scrn.draw(evil.spr);
         scrn.draw(h.spr);
+        if (h.coord.intersects(evil.coord)){
+            if (evil.living) {
+                if (h.vy > 0) {
+                    evil.vx = 0;
+                    evil.living = false;
+                    h.vy = -0.00035;
+                    h.on = false;
+                } else {
+                    scrn.clear(Color(255, 0, 0));
+                    evil.vx=0;
+                    h.end = true;
+                }
+            }
+        }
         scrn.display();
     }
     return 0;
