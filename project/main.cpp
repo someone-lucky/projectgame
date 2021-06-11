@@ -100,7 +100,6 @@ public:
                 }
             }
     }
-
     void checkup(float timer) {
         coord.left += vx * timer;
         StuckX();
