@@ -2,6 +2,7 @@
 #include "map.h"
 using namespace sf;
 float camx=0, camy=23*32-500;
+bool beg=false;
 class hero {
 public:
     float vx,vy,now;
@@ -134,6 +135,17 @@ int main() {
     hero h(texture);
     enemy evil(texture1);
     Clock tik;
+    Font font,font2;
+    font.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\font.TTF");
+    font2.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\begin.TTF");
+    Text losttxt("You lost\n Unlucky:(",font, 50);
+    losttxt.setColor(Color::White);
+    losttxt.setStyle(Text::Bold);
+    losttxt.setPosition(h.coord.left,h.coord.left);
+    Text txt("Your task is to pick up the coin\n on the top of the map\n good luck:)\n\n\n\n\n\n\n\n\n\n\n\n\n(P.S. press Enter)",font2, 20);
+    txt.setColor(Color::Black);
+    txt.setStyle(Text::Bold);
+    txt.setPosition(h.coord.left,h.coord.left);
     while (scrn.isOpen()){
         float timer = tik.getElapsedTime().asMicroseconds();
         tik.restart();
@@ -155,45 +167,56 @@ int main() {
                 h.on = false;
             }
         }
-        h.checkup(timer);
-        evil.checkup(timer);
-        if ((h.coord.left>250) && (h.coord.left<36*32-250))
-            camx = h.coord.left - 500/2;
-        if (h.coord.top<=23*32-250)
-            camy = h.coord.top - 500/2;
-        scrn.clear(Color::White);
-        for (int i=0; i<hm; i++)
-            for (int j=0; j<lm; j++){
-                if (FrameMap[i][j] == 'A')
-                    bs1.setTextureRect(IntRect(64,0,32,32));
-                if (FrameMap[i][j] == 'B')
-                    bs1.setTextureRect(IntRect(0,0,32,32));
-                if (FrameMap[i][j] == 'C')
-                    bs1.setTextureRect(IntRect(96,0,32,32));
-                if (FrameMap[i][j] == 'D')
-                    bs1.setTextureRect(IntRect(32,0,32,32));
-                if (FrameMap[i][j] == ' ')
-                    continue;
-                bs1.setPosition(j*32 - camx,i*32-camy);
-                scrn.draw(bs1);
-            }
-        scrn.draw(evil.spr);
-        scrn.draw(h.spr);
-        if (h.coord.intersects(evil.coord)){
-            if (evil.living) {
-                if (h.vy > 0) {
-                    evil.vx = 0;
-                    evil.living = false;
-                    h.vy = -0.00035;
-                    h.on = false;
-                } else {
-                    scrn.clear(Color(255, 0, 0));
-                    evil.vx=0;
-                    h.end = true;
+        if (Keyboard::isKeyPressed(Keyboard::Enter)){
+            beg=true;
+        }
+        if (!beg){
+            scrn.clear(Color::White);
+            scrn.draw(txt);
+            scrn.display();
+        }
+        if (beg){
+            h.checkup(timer);
+            evil.checkup(timer);
+            if ((h.coord.left>250) && (h.coord.left<36*32-250))
+                camx = h.coord.left - 500/2;
+            if (h.coord.top<=23*32-250)
+                camy = h.coord.top - 500/2;
+            scrn.clear(Color::White);
+            for (int i=0; i<hm; i++)
+                for (int j=0; j<lm; j++){
+                    if (FrameMap[i][j] == 'A')
+                        bs1.setTextureRect(IntRect(64,0,32,32));
+                    if (FrameMap[i][j] == 'B')
+                        bs1.setTextureRect(IntRect(0,0,32,32));
+                    if (FrameMap[i][j] == 'C')
+                        bs1.setTextureRect(IntRect(96,0,32,32));
+                    if (FrameMap[i][j] == 'D')
+                        bs1.setTextureRect(IntRect(32,0,32,32));
+                    if (FrameMap[i][j] == ' ')
+                        continue;
+                    bs1.setPosition(j*32 - camx,i*32-camy);
+                    scrn.draw(bs1);
+                }
+            scrn.draw(evil.spr);
+            scrn.draw(h.spr);
+            if (h.coord.intersects(evil.coord)){
+                if (evil.living) {
+                    if (h.vy > 0) {
+                        evil.vx = 0;
+                        evil.living = false;
+                        h.vy = -0.00035;
+                        h.on = false;
+                    } else {
+                        scrn.clear(Color(255, 0, 0));
+                        evil.vx=0;
+                        h.end = true;
+                        scrn.draw(losttxt);
+                    }
                 }
             }
+            scrn.display();
         }
-        scrn.display();
     }
     return 0;
 }
