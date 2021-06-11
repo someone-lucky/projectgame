@@ -76,20 +76,23 @@ public:
     bool living;
 
     enemy(Texture &image) {
-        vx =  0;
+        vx =  0.0002;
         now = 0;
+        living = true;
         spr.setTexture(image);
-        spr.setTextureRect(IntRect(10, 15, 50, 64));
-        coord = FloatRect(64, 32 * 20, 50, 64);
+        spr.setTextureRect(IntRect(0, 10, 27, 38));
+        coord = FloatRect(64, 32*20+27, 27, 38);
     }
     void StuckX(){
         for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
             for (int j=coord.left/32; j<(coord.left+coord.width)/32; j++){
-                if (FrameMap[i][j] == 'A'){
-                    if (vx>0)
-                        coord.left=j*32-coord.width;
-                    if (vx<0)
-                        coord.left=j*32+32;
+                if (FrameMap[i][j] == 'A' || FrameMap[i][j] == 'D' || FrameMap[i][j] == 'C'){
+                    if (vx>0) {
+                        coord.left = j * 32 - coord.width;
+                    }
+                    if (vx<0) {
+                        coord.left = j * 32 + 32;
+                    }
                 }
             }
     }
@@ -97,15 +100,20 @@ public:
     void checkup(float timer) {
         coord.left += vx * timer;
         StuckX();
+        if (coord.left+coord.width >= 32*35)
+            vx=-0.0002;
+        if (coord.left <= 32)
+            vx=0.0002;
         now += 0.00001 * timer;
         if (now > 4)
             now -= 4;
         if (vx > 0)
-            spr.setTextureRect(IntRect(10 + 50 * int(now), 15, 50, 64));
+            spr.setTextureRect(IntRect( 45 * int(now), 10, 45, 38));
         if (vx < 0)
-            spr.setTextureRect(IntRect(60 + 50 * int(now), 15, -50, 64));
-        spr.setPosition(coord.left - camx, coord.top - camy);
-        vx = 0;
+            spr.setTextureRect(IntRect(45 + 45 * int(now), 10, -45, 38));
+        if (!living)
+            spr.setTextureRect(IntRect(0, 0, 0, 0));
+        spr.setPosition(coord.left - camx,coord.top - camy);
     }
 };
 
@@ -113,21 +121,25 @@ public:
 int main() {
     RenderWindow scrn(VideoMode(500,500), "Game");
 
-    Image heroim;
+    Image heroim, evilim;
     heroim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\main.png");
     heroim.createMaskFromColor(Color(229, 159, 159));
+    evilim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\evil.png");
+    evilim.createMaskFromColor(Color(255, 255, 255));
     Image block1;
     block1.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\Industrial.png");
     block1.createMaskFromColor(Color(255, 255, 255));
 
-    Texture texture;
+    Texture texture, texture1;
     texture.loadFromImage(heroim);
+    texture1.loadFromImage(evilim);
     Texture t1;
     t1.loadFromImage(block1);
     Sprite bs1,bs2,bs3,bs4;
     bs1.setTexture(t1);
 
     hero h(texture);
+    enemy evil(texture1);
 
     Clock tik;
 
@@ -153,6 +165,7 @@ int main() {
             }
         }
         h.checkup(timer);
+        evil.checkup(timer);
         if ((h.coord.left>250) && (h.coord.left<36*32-250))
             camx = h.coord.left - 500/2;
         if (h.coord.top<=23*32-250)
@@ -173,6 +186,7 @@ int main() {
                 bs1.setPosition(j*32 - camx,i*32-camy);
                 scrn.draw(bs1);
             }
+        scrn.draw(evil.spr);
         scrn.draw(h.spr);
         scrn.display();
     }
