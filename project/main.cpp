@@ -1,18 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include "map.h"
-
 using namespace sf;
-
 float camx=0, camy=23*32-500;
-
-
 class hero {
 public:
     float vx,vy,now;
     FloatRect coord;
     Sprite spr;
     bool on;
-
     hero(Texture & image){
         vx=vy=0;
         now=0;
@@ -47,7 +42,6 @@ public:
                 }
             }
     }
-
     void checkup(float timer){
         coord.left += vx*timer;
         StuckX();
@@ -66,7 +60,6 @@ public:
         spr.setPosition(coord.left - camx,coord.top - camy);
         vx=0;
     }
-
 };
 class enemy {
 public:
@@ -116,8 +109,6 @@ public:
         spr.setPosition(coord.left - camx,coord.top - camy);
     }
 };
-
-
 int main() {
     RenderWindow scrn(VideoMode(500,500), "Game");
 
@@ -129,7 +120,6 @@ int main() {
     Image block1;
     block1.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\Industrial.png");
     block1.createMaskFromColor(Color(255, 255, 255));
-
     Texture texture, texture1;
     texture.loadFromImage(heroim);
     texture1.loadFromImage(evilim);
@@ -137,12 +127,9 @@ int main() {
     t1.loadFromImage(block1);
     Sprite bs1,bs2,bs3,bs4;
     bs1.setTexture(t1);
-
     hero h(texture);
     enemy evil(texture1);
-
     Clock tik;
-
     while (scrn.isOpen()){
         float timer = tik.getElapsedTime().asMicroseconds();
         tik.restart();
