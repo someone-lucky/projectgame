@@ -10,10 +10,8 @@ public:
     FloatRect coord;
     Sprite spr;
     bool on,end;
-    int health;
     hero(Texture & image){
         vx=vy=0;
-        health=100;
         now=0;
         end = false;
         spr.setTexture(image);
