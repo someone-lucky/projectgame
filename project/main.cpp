@@ -1,8 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "map.h"
 using namespace sf;
-float camx=0, camy=23*32-500;
+float camx=0, camy=23*32-500, buff=0;
 bool beg=false;
+int nowt=0;
 class hero {
 public:
     float vx,vy,now;
@@ -22,18 +23,22 @@ public:
     void StuckX(){
         for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
             for (int j=coord.left/32; j<(coord.left+coord.width)/32; j++){
-                if (FrameMap[i][j] == 'A' || FrameMap[i][j] == 'D' || FrameMap[i][j] == 'C'){
+                if (FrameMap[i][j] == 'A' || FrameMap[i][j] == 'D' || FrameMap[i][j] == 'C' || FrameMap[i][j] == 'B'){
                     if (vx>0)
                         coord.left=j*32-coord.width;
                     if (vx<0)
                         coord.left=j*32+32;
+                }
+                if (FrameMap[i][j] == 'E'){
+                    buff=-0.000175;
+                    FrameMap[i][j]=' ';
                 }
             }
     }
     void StuckY(){
         for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
             for (int j=coord.left/32; j<(coord.left+coord.width)/32; j++){
-                if (FrameMap[i][j] == 'B' || FrameMap[i][j] == 'C' || FrameMap[i][j] == 'D'){
+                if (FrameMap[i][j] == 'A' || FrameMap[i][j] == 'D' || FrameMap[i][j] == 'C' || FrameMap[i][j] == 'B'){
                     if (vy>=0) {
                         coord.top = i*32-coord.height;
                         vy = 0;
@@ -80,7 +85,7 @@ public:
         living = true;
         spr.setTexture(image);
         spr.setTextureRect(IntRect(0, 10, 27, 38));
-        coord = FloatRect(32*10, 32*20+27, 27, 38);
+        coord = FloatRect(32*25, 32*20+27, 27, 38);
     }
     void StuckX(){
         for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
@@ -101,7 +106,7 @@ public:
         StuckX();
         if (coord.left+coord.width >= 32*35)
             vx=-0.0002;
-        if (coord.left <= 32)
+        if (coord.left <= 19*32)
             vx=0.0002;
         now += 0.00001 * timer;
         if (now > 4)
@@ -130,7 +135,7 @@ int main() {
     texture1.loadFromImage(evilim);
     Texture t1;
     t1.loadFromImage(block1);
-    Sprite bs1,bs2,bs3,bs4;
+    Sprite bs1;
     bs1.setTexture(t1);
     hero h(texture);
     enemy evil(texture1);
@@ -163,7 +168,7 @@ int main() {
         }
         if (Keyboard::isKeyPressed(Keyboard::Up)){
             if (h.on){
-                h.vy=-0.00035;
+                h.vy=-0.000175+buff;
                 h.on = false;
             }
         }
@@ -193,6 +198,8 @@ int main() {
                         bs1.setTextureRect(IntRect(96,0,32,32));
                     if (FrameMap[i][j] == 'D')
                         bs1.setTextureRect(IntRect(32,0,32,32));
+                    if (FrameMap[i][j] == 'E')
+                        bs1.setTextureRect(IntRect(128, 0, 24, 24));
                     if (FrameMap[i][j] == ' ')
                         continue;
                     bs1.setPosition(j*32 - camx,i*32-camy);
