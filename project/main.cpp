@@ -198,7 +198,7 @@ int main() {
                     camx = h.coord.left - 500/2;
                 if (h.coord.top<=23*32-250)
                     camy = h.coord.top - 500/2;
-                scrn.clear(Color::White);
+                scrn.clear(Color::Cyan);
                 for (int i=0; i<hm; i++)
                     for (int j=0; j<lm; j++){
                         if (FrameMap[i][j] == 'A')
