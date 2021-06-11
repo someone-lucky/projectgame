@@ -145,7 +145,7 @@ int main() {
     losttxt.setColor(Color::White);
     losttxt.setStyle(Text::Bold);
     losttxt.setPosition(h.coord.left,h.coord.left);
-    Text txt("Your task is to pick up the coin\n on the top of the map\n good luck:)\n\n\n\n\n\n\n\n\n\n\n\n\n(P.S. press Enter)",font2, 20);
+    Text txt("Your task is to pick up the dollar\n on the top of the map\n good luck:)\n\n\n\n\n\n\n\n\n\n\n\n\n(P.S. press Enter)",font2, 20);
     txt.setColor(Color::Black);
     txt.setStyle(Text::Bold);
     txt.setPosition(h.coord.left,h.coord.left);
