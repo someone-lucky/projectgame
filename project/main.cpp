@@ -4,6 +4,8 @@ using namespace sf;
 float camx=0, camy=23*32-500, buff=0;
 bool beg=false, win=false;
 class hero {
+private:
+    int k=0;
 public:
     float vx,vy,now;
     FloatRect coord;
@@ -45,12 +47,14 @@ public:
                         vy = 0;
                         on = true;
                     }
-                    if (vy<0) {
+                    if (vy<0 && k==0) {
                         coord.top = i*32+32;
-                        vy = 0;
+
+                        k++;
                     }
                 }
             }
+        k=0;
     }
     void checkup(float timer){
         if (!end) {
@@ -163,25 +167,19 @@ int main() {
             scrn.close();
         }
         scrn.setActive();
-        if (Keyboard::isKeyPressed(Keyboard::D)){
+        if (Keyboard::isKeyPressed(Keyboard::D) || Keyboard::isKeyPressed(Keyboard::Right)){
             h.vx=0.0002;
         }
-        if (Keyboard::isKeyPressed(Keyboard::A)){
+        if (Keyboard::isKeyPressed(Keyboard::A) || Keyboard::isKeyPressed(Keyboard::Left)){
             h.vx=-0.0002;
         }
-        if (Keyboard::isKeyPressed(Keyboard::Space)){
+        if (Keyboard::isKeyPressed(Keyboard::Space ) || Keyboard::isKeyPressed(Keyboard::W) || Keyboard::isKeyPressed(Keyboard::Up)){
             if (h.on){
                 h.vy=-0.0002+buff;
                 h.on = false;
             }
         }
-        if (Keyboard::isKeyPressed(Keyboard::W)){
-            if (h.on){
-                h.vy=-0.0002+buff;
-                h.on = false;
-            }
-        }
-        if (Keyboard::isKeyPressed(Keyboard::Enter)){
+        if (Keyboard::isKeyPressed(Keyboard::Enter) || Keyboard::isKeyPressed(Keyboard::Space)){
             beg=true;
         }
         if (!beg){
