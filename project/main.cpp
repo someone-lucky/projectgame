@@ -49,7 +49,6 @@ public:
                     }
                     if (vy<0 && k==0) {
                         coord.top = i*32+32;
-
                         k++;
                     }
                 }
