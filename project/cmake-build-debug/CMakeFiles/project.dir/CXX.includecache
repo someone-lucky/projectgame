@@ -13,8 +13,6 @@ SFML/Graphics.hpp
 C:/Users/66236/CLionProjects/projectgame/project/game.cpp
 SFML/Graphics.hpp
 -
-map.h
-C:/Users/66236/CLionProjects/projectgame/project/map.h
 hero.h
 C:/Users/66236/CLionProjects/projectgame/project/hero.h
 enemy.h
@@ -23,6 +21,8 @@ C:/Users/66236/CLionProjects/projectgame/project/enemy.h
 C:/Users/66236/CLionProjects/projectgame/project/hero.h
 SFML/Graphics.hpp
 -
+map.h
+C:/Users/66236/CLionProjects/projectgame/project/map.h
 
 C:/Users/66236/CLionProjects/projectgame/project/map.h
 SFML/Graphics.hpp

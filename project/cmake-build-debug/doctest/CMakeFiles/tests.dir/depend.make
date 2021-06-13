@@ -4,7 +4,7 @@
 doctest/CMakeFiles/tests.dir/tests_main.cpp.obj: ../doctest/doctest.h
 doctest/CMakeFiles/tests.dir/tests_main.cpp.obj: ../doctest/tests_main.cpp
 doctest/CMakeFiles/tests.dir/tests_main.cpp.obj: ../enemy.h
-doctest/CMakeFiles/tests.dir/tests_main.cpp.obj: ../herotest.h
+doctest/CMakeFiles/tests.dir/tests_main.cpp.obj: ../hero.h
 doctest/CMakeFiles/tests.dir/tests_main.cpp.obj: ../map.h
 doctest/CMakeFiles/tests.dir/tests_main.cpp.obj: C:/Users/66236/Desktop/HW\ +\ Prj/AaP/SFML-2.5.1/include/SFML/Config.hpp
 doctest/CMakeFiles/tests.dir/tests_main.cpp.obj: C:/Users/66236/Desktop/HW\ +\ Prj/AaP/SFML-2.5.1/include/SFML/Graphics.hpp

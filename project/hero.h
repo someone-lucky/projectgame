@@ -3,6 +3,7 @@
 #endif
 
 #include <SFML/Graphics.hpp>
+#include "map.h"
 
 using namespace sf;
 //! Переменные, отвечающие за движения "камеры", следящей за игроком

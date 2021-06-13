@@ -93,8 +93,8 @@ unistd.h
 C:/Users/66236/CLionProjects/projectgame/project/doctest/tests_main.cpp
 doctest.h
 C:/Users/66236/CLionProjects/projectgame/project/doctest/doctest.h
-../herotest.h
-C:/Users/66236/CLionProjects/projectgame/project/herotest.h
+../hero.h
+C:/Users/66236/CLionProjects/projectgame/project/hero.h
 ../enemy.h
 C:/Users/66236/CLionProjects/projectgame/project/enemy.h
 
@@ -102,7 +102,7 @@ C:/Users/66236/CLionProjects/projectgame/project/enemy.h
 SFML/Graphics.hpp
 -
 
-C:/Users/66236/CLionProjects/projectgame/project/herotest.h
+C:/Users/66236/CLionProjects/projectgame/project/hero.h
 SFML/Graphics.hpp
 -
 map.h

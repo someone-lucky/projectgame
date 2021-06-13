@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include "map.h"
 #include "hero.h"
 #include "enemy.h"
 
