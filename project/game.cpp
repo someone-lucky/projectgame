@@ -72,11 +72,11 @@ int main() {
 /*! Основные персонажы, описанные в соответствующих классах */
     hero h(texture);
     enemy evil(texture1);
- /**
-@code
-    Clock tik;
-@endcode
-*/
+    /**
+   @code
+       Clock tik;
+   @endcode
+   */
 //! Время с начала игры.
     Clock tik;
 /**
@@ -167,7 +167,8 @@ int main() {
             if (!h.win) {
                 h.checkup(timer);
                 evil.checkup(timer);
-                if ((h.coord.left > 250) && (h.coord.left < 36 * 32 - 250))
+                if ((h.coord.left > 250) && (h.coord.left < 36 * 32 -
+                                                            250))  // идея с camx и camy была позаимствована, т.к. не смог нормально реализовать свою задумку
                     camx = h.coord.left - 250;
                 if (h.coord.top <= 23 * 32 - 250)
                     camy = h.coord.top - 250;

@@ -94,51 +94,51 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        coord = FloatRect(32 * 25, 32 * 20 + 27, 27, 38);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classenemy.html#abc44fb8afad7c5d06b674464e95f1353">   34</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classenemy.html#abc44fb8afad7c5d06b674464e95f1353">StuckX</a>() {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = coord.top / 32; i &lt; (coord.top + coord.height) / 32; i++)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = coord.left / 32; j &lt; (coord.left + coord.width) / 32; j++) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="map_8h.html#a892709dffd5c54c1116c1cfa7283b023">FrameMap</a>[i][j] == <span class="charliteral">&#39;A&#39;</span> || <a class="code" href="map_8h.html#a892709dffd5c54c1116c1cfa7283b023">FrameMap</a>[i][j] == <span class="charliteral">&#39;D&#39;</span> || <a class="code" href="map_8h.html#a892709dffd5c54c1116c1cfa7283b023">FrameMap</a>[i][j] == <span class="charliteral">&#39;C&#39;</span>) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="keywordflow">if</span> (vx &gt; 0) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        coord.left = j * 32 - coord.width;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="keywordflow">if</span> (vx &lt; 0) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        coord.left = j * 32 + 32;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classenemy.html#a5e5c0a7100c1ced9fddd575bcd50fe60">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classenemy.html#a5e5c0a7100c1ced9fddd575bcd50fe60">checkup</a>(<span class="keywordtype">float</span> timer) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        coord.left += vx * timer;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        StuckX();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (coord.left + coord.width &gt;= 32 * 35)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            vx = -0.0002;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (coord.left &lt;= 19 * 32)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            vx = 0.0002;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        now += 0.00001 * timer;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> (now &gt; 4)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            now -= 4;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (vx &gt; 0)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            spr.setTextureRect(IntRect(45 * <span class="keywordtype">int</span>(now), 10, 45, 38));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (vx &lt; 0)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            spr.setTextureRect(IntRect(45 + 45 * <span class="keywordtype">int</span>(now), 10, -45, 38));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (!living)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            spr.setTextureRect(IntRect(0, 0, 0, 0));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        spr.setPosition(coord.left - <a class="code" href="hero_8h.html#ad2232388470e1aeb27ca4f0a384d8d83">camx</a>, coord.top - <a class="code" href="hero_8h.html#ae1aaa18512a5af1b1138e82db0afb999">camy</a>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classenemy.html#abc44fb8afad7c5d06b674464e95f1353">   35</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classenemy.html#abc44fb8afad7c5d06b674464e95f1353">StuckX</a>() {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = coord.top / 32; i &lt; (coord.top + coord.height) / 32; i++)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = coord.left / 32; j &lt; (coord.left + coord.width) / 32; j++) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="map_8h.html#a892709dffd5c54c1116c1cfa7283b023">FrameMap</a>[i][j] == <span class="charliteral">&#39;A&#39;</span> || <a class="code" href="map_8h.html#a892709dffd5c54c1116c1cfa7283b023">FrameMap</a>[i][j] == <span class="charliteral">&#39;D&#39;</span> || <a class="code" href="map_8h.html#a892709dffd5c54c1116c1cfa7283b023">FrameMap</a>[i][j] == <span class="charliteral">&#39;C&#39;</span>) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="keywordflow">if</span> (vx &gt; 0) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        coord.left = j * 32 - coord.width;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordflow">if</span> (vx &lt; 0) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        coord.left = j * 32 + 32;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classenemy.html#a5e5c0a7100c1ced9fddd575bcd50fe60">   50</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classenemy.html#a5e5c0a7100c1ced9fddd575bcd50fe60">checkup</a>(<span class="keywordtype">float</span> timer) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        coord.left += vx * timer;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        StuckX();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (coord.left + coord.width &gt;= 32 * 35)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            vx = -0.0002;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (coord.left &lt;= 19 * 32)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            vx = 0.0002;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        now += 0.00001 * timer;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (now &gt; 4)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            now -= 4;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (vx &gt; 0)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            spr.setTextureRect(IntRect(45 * <span class="keywordtype">int</span>(now), 10, 45, 38));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (vx &lt; 0)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            spr.setTextureRect(IntRect(45 + 45 * <span class="keywordtype">int</span>(now), 10, -45, 38));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> (!living)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            spr.setTextureRect(IntRect(0, 0, 0, 0));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        spr.setPosition(coord.left - <a class="code" href="hero_8h.html#ad2232388470e1aeb27ca4f0a384d8d83">camx</a>, coord.top - <a class="code" href="hero_8h.html#ae1aaa18512a5af1b1138e82db0afb999">camy</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
 <div class="ttc" id="aclassenemy_html"><div class="ttname"><a href="classenemy.html">enemy</a></div><div class="ttdoc">Класс противника</div><div class="ttdef"><b>Definition:</b> enemy.h:10</div></div>
 <div class="ttc" id="aclassenemy_html_a0e329260d202cfb765e56493ea0af6d1"><div class="ttname"><a href="classenemy.html#a0e329260d202cfb765e56493ea0af6d1">enemy::enemy</a></div><div class="ttdeci">enemy(Texture &amp;image)</div><div class="ttdoc">Описание антагониста</div><div class="ttdef"><b>Definition:</b> enemy.h:24</div></div>
 <div class="ttc" id="aclassenemy_html_a58b2d640a0c2a480a0aa59a8d2e61989"><div class="ttname"><a href="classenemy.html#a58b2d640a0c2a480a0aa59a8d2e61989">enemy::vx</a></div><div class="ttdeci">float vx</div><div class="ttdoc">Скорость вдоль оси Ох</div><div class="ttdef"><b>Definition:</b> enemy.h:13</div></div>
-<div class="ttc" id="aclassenemy_html_a5e5c0a7100c1ced9fddd575bcd50fe60"><div class="ttname"><a href="classenemy.html#a5e5c0a7100c1ced9fddd575bcd50fe60">enemy::checkup</a></div><div class="ttdeci">void checkup(float timer)</div><div class="ttdoc">Функция, отвеяающая за изменения персонажа во время игры</div><div class="ttdef"><b>Definition:</b> enemy.h:49</div></div>
+<div class="ttc" id="aclassenemy_html_a5e5c0a7100c1ced9fddd575bcd50fe60"><div class="ttname"><a href="classenemy.html#a5e5c0a7100c1ced9fddd575bcd50fe60">enemy::checkup</a></div><div class="ttdeci">void checkup(float timer)</div><div class="ttdoc">Функция, отвеяающая за изменения персонажа во время игры</div><div class="ttdef"><b>Definition:</b> enemy.h:50</div></div>
 <div class="ttc" id="aclassenemy_html_a601309c35dbaad58879f0f7f5fa7940c"><div class="ttname"><a href="classenemy.html#a601309c35dbaad58879f0f7f5fa7940c">enemy::now</a></div><div class="ttdeci">float now</div><div class="ttdoc">Переменная, отвечающая за анимацию персонажа</div><div class="ttdef"><b>Definition:</b> enemy.h:15</div></div>
 <div class="ttc" id="aclassenemy_html_a7d56cc86432c09516f01f581045c7a1a"><div class="ttname"><a href="classenemy.html#a7d56cc86432c09516f01f581045c7a1a">enemy::living</a></div><div class="ttdeci">bool living</div><div class="ttdoc">Переменная, отвечающая за жизнь персонажа</div><div class="ttdef"><b>Definition:</b> enemy.h:21</div></div>
-<div class="ttc" id="aclassenemy_html_abc44fb8afad7c5d06b674464e95f1353"><div class="ttname"><a href="classenemy.html#abc44fb8afad7c5d06b674464e95f1353">enemy::StuckX</a></div><div class="ttdeci">void StuckX()</div><div class="ttdoc">Функция, отвеяающая за столкновения с объектами вдоль оси Ох</div><div class="ttdef"><b>Definition:</b> enemy.h:34</div></div>
+<div class="ttc" id="aclassenemy_html_abc44fb8afad7c5d06b674464e95f1353"><div class="ttname"><a href="classenemy.html#abc44fb8afad7c5d06b674464e95f1353">enemy::StuckX</a></div><div class="ttdeci">void StuckX()</div><div class="ttdoc">Функция, отвеяающая за столкновения с объектами вдоль оси Ох</div><div class="ttdef"><b>Definition:</b> enemy.h:35</div></div>
 <div class="ttc" id="aclassenemy_html_acf328c4c9c0da589e9f82e29271ee4ef"><div class="ttname"><a href="classenemy.html#acf328c4c9c0da589e9f82e29271ee4ef">enemy::spr</a></div><div class="ttdeci">Sprite spr</div><div class="ttdoc">Содержит текстуры персонажа</div><div class="ttdef"><b>Definition:</b> enemy.h:19</div></div>
 <div class="ttc" id="aclassenemy_html_ad3da3abff8875a0f08b0a24be2ebce19"><div class="ttname"><a href="classenemy.html#ad3da3abff8875a0f08b0a24be2ebce19">enemy::coord</a></div><div class="ttdeci">FloatRect coord</div><div class="ttdoc">Содержит координаты и размеры персонажа</div><div class="ttdef"><b>Definition:</b> enemy.h:17</div></div>
 <div class="ttc" id="ahero_8h_html_ad2232388470e1aeb27ca4f0a384d8d83"><div class="ttname"><a href="hero_8h.html#ad2232388470e1aeb27ca4f0a384d8d83">camx</a></div><div class="ttdeci">float camx</div><div class="ttdoc">Переменные, отвечающие за движения &quot;камеры&quot;, следящей за игроком</div><div class="ttdef"><b>Definition:</b> hero.h:9</div></div>
 <div class="ttc" id="ahero_8h_html_ae1aaa18512a5af1b1138e82db0afb999"><div class="ttname"><a href="hero_8h.html#ae1aaa18512a5af1b1138e82db0afb999">camy</a></div><div class="ttdeci">float camy</div><div class="ttdef"><b>Definition:</b> hero.h:9</div></div>
-<div class="ttc" id="amap_8h_html_a892709dffd5c54c1116c1cfa7283b023"><div class="ttname"><a href="map_8h.html#a892709dffd5c54c1116c1cfa7283b023">FrameMap</a></div><div class="ttdeci">String FrameMap[hm]</div><div class="ttdoc">Каркас карты</div><div class="ttdef"><b>Definition:</b> map.h:12</div></div>
+<div class="ttc" id="amap_8h_html_a892709dffd5c54c1116c1cfa7283b023"><div class="ttname"><a href="map_8h.html#a892709dffd5c54c1116c1cfa7283b023">FrameMap</a></div><div class="ttdeci">String FrameMap[hm]</div><div class="ttdoc">Каркас карты</div><div class="ttdef"><b>Definition:</b> map.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,7 +1,9 @@
 #ifndef PROJECT_MAP_H
 #define PROJECT_MAP_H
 #endif
+
 #include <SFML/Graphics.hpp>
+
 using namespace sf;
 //! Высота карты
 const int hm = 23;
@@ -9,7 +11,7 @@ const int hm = 23;
 const int lm = 36;
 //! Каркас карты
 /*! Он представлен в виде матрицы, составленной из различных букв */
-String  FrameMap[hm] {
+String FrameMap[hm]{
         "A                                  A",
         "A                                  A",
         "A                                  A",
