@@ -33,7 +33,7 @@ int main() {
     losttxt.setColor(Color::White);
     losttxt.setStyle(Text::Bold);
     losttxt.setPosition(h.coord.left, h.coord.left);
-    Text wtxt("You WON!?\n o_O\n   Gtatz!:)", font, 50);
+    Text wtxt("You WON!?\n o_O\nGtatz!:)", font, 50);
     wtxt.setColor(Color::White);
     wtxt.setStyle(Text::Bold);
     wtxt.setPosition(h.coord.left, h.coord.left);

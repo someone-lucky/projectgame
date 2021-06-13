@@ -8,8 +8,6 @@ using namespace sf;
 float camx = 0, camy = 23 * 32 - 500;
 
 class hero {
-private:
-    int k = 0;
 public:
     float vx, vy, now, buff, g;
     FloatRect coord;
@@ -57,13 +55,11 @@ public:
                         vy = 0;
                         on = true;
                     }
-                    if (vy < 0 && k == 0) {
+                    if (vy < 0) {
                         coord.top = i * 32 + 32;
-                        k++;
                     }
                 }
             }
-        k = 0;
     }
 
     void checkup(float timer) {
