@@ -80,6 +80,7 @@ TEST_CASE("Checkup collision tests") {
     Texture texture;
     texture.loadFromImage(heroim);
     hero hero(texture);
+    hero.buff = 0;
     hero.coord = FloatRect(64, 640, 50, 64);
     for (int i = 0; i < 100; i++) {
         hero.vx = 10;
@@ -96,6 +97,12 @@ TEST_CASE("Checkup collision tests") {
     hero.coord = FloatRect(64, 650, 50, 64);
     hero.checkup(timer);
     REQUIRE(hero.coord.top == 640);
+    hero.coord = FloatRect(32 * 32, 640, 50, 64);
+    hero.checkup(timer);
+    REQUIRE(hero.buff == float(-0.000175));
+    hero.coord = FloatRect(6 * 32, 5 * 32, 50, 64);
+    hero.checkup(timer);
+    REQUIRE(hero.win);
 }
 
 TEST_CASE("Checkup enemy tests") {
