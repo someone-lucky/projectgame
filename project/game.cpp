@@ -143,8 +143,8 @@ int main() {
                 scrn.close();
         }
         scrn.setActive();
-        if (Keyboard::isKeyPressed(Keyboard::D) || Keyboard::isKeyPressed(Keyboard::Right)) {
-            h.vx = 0.0002;
+        if (Keyboard::isKeyPressed(Keyboard::D) || Keyboard::isKeyPressed(Keyboard::Right)) {  //в данной части описывается считывание клавиш
+            h.vx = 0.0002;                                                                              // и что проиходит при их нажатии
         }
         if (Keyboard::isKeyPressed(Keyboard::A) || Keyboard::isKeyPressed(Keyboard::Left)) {
             h.vx = -0.0002;
@@ -174,7 +174,7 @@ int main() {
                 if (h.coord.top <= 23 * 32 - 250)
                     camy = h.coord.top - 250;
                 scrn.clear(Color::Cyan);
-                for (int i = 0; i < hm; i++)
+                for (int i = 0; i < hm; i++)  //отрисовка карты
                     for (int j = 0; j < lm; j++) {
                         if (FrameMap[i][j] == 'A')
                             bs1.setTextureRect(IntRect(64, 0, 32, 32));
@@ -201,7 +201,7 @@ int main() {
                     }
                 scrn.draw(evil.spr);
                 scrn.draw(h.spr);
-                if (h.coord.intersects(evil.coord)) {
+                if (h.coord.intersects(evil.coord)) {  //взаимодействие персонажей
                     if (evil.living) {
                         if (h.vy > 0) {
                             evil.vx = 0;
