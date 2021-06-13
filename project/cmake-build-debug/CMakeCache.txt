@@ -14,6 +14,18 @@
 # EXTERNAL cache entries
 ########################
 
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=Boost_DIR-NOTFOUND
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=Boost_INCLUDE_DIR-NOTFOUND
+
+//Boost unit_test_framework library (debug)
+Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG:FILEPATH=Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG-NOTFOUND
+
+//Boost unit_test_framework library (release)
+Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE:FILEPATH=Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE-NOTFOUND
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/addr2line.exe
 
@@ -278,6 +290,12 @@ VorbisFile_LIB:FILEPATH=C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/libvo
 Vorbis_LIB:FILEPATH=C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/libvorbis.a
 
 //Value Computed by CMake
+doctest_BINARY_DIR:STATIC=C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest
+
+//Value Computed by CMake
+doctest_SOURCE_DIR:STATIC=C:/Users/66236/CLionProjects/projectgame/project/doctest
+
+//Value Computed by CMake
 project_BINARY_DIR:STATIC=C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug
 
 //Value Computed by CMake
@@ -288,6 +306,12 @@ project_SOURCE_DIR:STATIC=C:/Users/66236/CLionProjects/projectgame/project
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG
+Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE
+Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -396,7 +420,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

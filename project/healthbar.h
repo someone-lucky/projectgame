@@ -30,7 +30,7 @@ public:
         }
         else{
             barh.setPosition(camx-vx*timer, camy-vy*timer);
-            //bard.setPosition(2*coord.left-camx, coord.left-camy);
+            bard.setPosition(2*coord.left-camx, coord.left-camy);
         }
         scrn.draw(barh);
         scrn.draw(bard);

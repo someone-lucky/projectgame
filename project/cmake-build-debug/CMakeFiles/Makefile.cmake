@@ -38,6 +38,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.17.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.5/CMakeRCCompiler.cmake"
   "CMakeFiles/3.17.5/CMakeSystem.cmake"
+  "../doctest/CMakeLists.txt"
   "C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake"
   "C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML/SFMLConfigDependencies.cmake"
   "C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML/SFMLConfigVersion.cmake"
@@ -55,9 +56,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "doctest/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/project.dir/DependInfo.cmake"
+  "doctest/CMakeFiles/tests.dir/DependInfo.cmake"
+  "doctest/CMakeFiles/doctest.dir/DependInfo.cmake"
   )

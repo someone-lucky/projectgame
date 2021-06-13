@@ -142,6 +142,32 @@ project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/build
 .PHONY : project/fast
 
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) $(MAKESILENT) -f doctest\CMakeFiles\tests.dir\build.make doctest/CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
+# Target rules for targets named doctest
+
+# Build rule for target.
+doctest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 doctest
+.PHONY : doctest
+
+# fast build rule for target.
+doctest/fast:
+	$(MAKE) $(MAKESILENT) -f doctest\CMakeFiles\doctest.dir\build.make doctest/CMakeFiles/doctest.dir/build
+.PHONY : doctest/fast
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -177,7 +203,9 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... doctest
 	@echo ... project
+	@echo ... tests
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

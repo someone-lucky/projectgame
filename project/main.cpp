@@ -191,9 +191,9 @@ int main() {
                 h.checkup(timer);
                 evil.checkup(timer);
                 if ((h.coord.left>250) && (h.coord.left<36*32-250))
-                    camx = h.coord.left - 500/2;
+                    camx = h.coord.left - 250;
                 if (h.coord.top<=23*32-250)
-                    camy = h.coord.top - 500/2;
+                    camy = h.coord.top - 250;
                 scrn.clear(Color::Cyan);
                 for (int i=0; i<hm; i++)
                     for (int j=0; j<lm; j++){
