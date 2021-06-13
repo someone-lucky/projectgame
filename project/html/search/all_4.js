@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['framemap_12',['FrameMap',['../map_8h.html#a892709dffd5c54c1116c1cfa7283b023',1,'map.h']]]
+  ['g_10',['g',['../classhero.html#acc8f1fa7e622038de60dc482a7addb14',1,'hero']]],
+  ['game_2ecpp_11',['game.cpp',['../game_8cpp.html',1,'']]]
 ];

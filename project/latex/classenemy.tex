@@ -2,31 +2,41 @@
 \label{classenemy}\index{enemy@{enemy}}
 
 
+Класс противника  
+
+
+
+
 {\ttfamily \#include $<$enemy.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classenemy_a0e329260d202cfb765e56493ea0af6d1}{enemy}} (Texture \&image)
-\item 
+\begin{DoxyCompactList}\small\item\em Описание антагониста \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classenemy_abc44fb8afad7c5d06b674464e95f1353}{StuckX}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Функция, отвеяающая за столкновения с объектами вдоль оси Ох \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classenemy_a5e5c0a7100c1ced9fddd575bcd50fe60}{checkup}} (float timer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Функция, отвеяающая за изменения персонажа во время игры \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 float \mbox{\hyperlink{classenemy_a58b2d640a0c2a480a0aa59a8d2e61989}{vx}}
-\item 
+\begin{DoxyCompactList}\small\item\em Скорость вдоль оси Ох \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classenemy_a601309c35dbaad58879f0f7f5fa7940c}{now}}
-\item 
+\begin{DoxyCompactList}\small\item\em Переменная, отвечающая за анимацию персонажа \end{DoxyCompactList}\item 
 Float\+Rect \mbox{\hyperlink{classenemy_ad3da3abff8875a0f08b0a24be2ebce19}{coord}}
-\item 
+\begin{DoxyCompactList}\small\item\em Содержит координаты и размеры персонажа \end{DoxyCompactList}\item 
 Sprite \mbox{\hyperlink{classenemy_acf328c4c9c0da589e9f82e29271ee4ef}{spr}}
-\item 
+\begin{DoxyCompactList}\small\item\em Содержит текстуры персонажа \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classenemy_a7d56cc86432c09516f01f581045c7a1a}{living}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Переменная, отвечающая за жизнь персонажа \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Класс противника 
+
+В нем описаны взаимдоействия персонажа с объектами карты, физика передвижений, анимация движений и прорисовка 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classenemy_a0e329260d202cfb765e56493ea0af6d1}\label{classenemy_a0e329260d202cfb765e56493ea0af6d1}} 
@@ -37,6 +47,10 @@ bool \mbox{\hyperlink{classenemy_a7d56cc86432c09516f01f581045c7a1a}{living}}
 
 
 
+Описание антагониста 
+
+Его состояние при старте игры 
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classenemy_a5e5c0a7100c1ced9fddd575bcd50fe60}\label{classenemy_a5e5c0a7100c1ced9fddd575bcd50fe60}} 
 \index{enemy@{enemy}!checkup@{checkup}}
@@ -44,13 +58,21 @@ bool \mbox{\hyperlink{classenemy_a7d56cc86432c09516f01f581045c7a1a}{living}}
 \doxysubsubsection{\texorpdfstring{checkup()}{checkup()}}
 {\footnotesize\ttfamily void enemy\+::checkup (\begin{DoxyParamCaption}\item[{float}]{timer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classenemy_abc44fb8afad7c5d06b674464e95f1353}\label{classenemy_abc44fb8afad7c5d06b674464e95f1353}} 
+
+
+Функция, отвеяающая за изменения персонажа во время игры 
+
+Данная функция отвечает за передвижение, смену кадров при движении, а также за его исчезновение при гибели \mbox{\Hypertarget{classenemy_abc44fb8afad7c5d06b674464e95f1353}\label{classenemy_abc44fb8afad7c5d06b674464e95f1353}} 
 \index{enemy@{enemy}!StuckX@{StuckX}}
 \index{StuckX@{StuckX}!enemy@{enemy}}
 \doxysubsubsection{\texorpdfstring{StuckX()}{StuckX()}}
 {\footnotesize\ttfamily void enemy\+::\+StuckX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
+
+Функция, отвеяающая за столкновения с объектами вдоль оси Ох 
+
+В данной функции рассматриваются столкновения со стенами 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classenemy_ad3da3abff8875a0f08b0a24be2ebce19}\label{classenemy_ad3da3abff8875a0f08b0a24be2ebce19}} 
@@ -59,11 +81,19 @@ bool \mbox{\hyperlink{classenemy_a7d56cc86432c09516f01f581045c7a1a}{living}}
 \doxysubsubsection{\texorpdfstring{coord}{coord}}
 {\footnotesize\ttfamily Float\+Rect enemy\+::coord}
 
+
+
+Содержит координаты и размеры персонажа 
+
 \mbox{\Hypertarget{classenemy_a7d56cc86432c09516f01f581045c7a1a}\label{classenemy_a7d56cc86432c09516f01f581045c7a1a}} 
 \index{enemy@{enemy}!living@{living}}
 \index{living@{living}!enemy@{enemy}}
 \doxysubsubsection{\texorpdfstring{living}{living}}
 {\footnotesize\ttfamily bool enemy\+::living}
+
+
+
+Переменная, отвечающая за жизнь персонажа 
 
 \mbox{\Hypertarget{classenemy_a601309c35dbaad58879f0f7f5fa7940c}\label{classenemy_a601309c35dbaad58879f0f7f5fa7940c}} 
 \index{enemy@{enemy}!now@{now}}
@@ -71,17 +101,29 @@ bool \mbox{\hyperlink{classenemy_a7d56cc86432c09516f01f581045c7a1a}{living}}
 \doxysubsubsection{\texorpdfstring{now}{now}}
 {\footnotesize\ttfamily float enemy\+::now}
 
+
+
+Переменная, отвечающая за анимацию персонажа 
+
 \mbox{\Hypertarget{classenemy_acf328c4c9c0da589e9f82e29271ee4ef}\label{classenemy_acf328c4c9c0da589e9f82e29271ee4ef}} 
 \index{enemy@{enemy}!spr@{spr}}
 \index{spr@{spr}!enemy@{enemy}}
 \doxysubsubsection{\texorpdfstring{spr}{spr}}
 {\footnotesize\ttfamily Sprite enemy\+::spr}
 
+
+
+Содержит текстуры персонажа 
+
 \mbox{\Hypertarget{classenemy_a58b2d640a0c2a480a0aa59a8d2e61989}\label{classenemy_a58b2d640a0c2a480a0aa59a8d2e61989}} 
 \index{enemy@{enemy}!vx@{vx}}
 \index{vx@{vx}!enemy@{enemy}}
 \doxysubsubsection{\texorpdfstring{vx}{vx}}
 {\footnotesize\ttfamily float enemy\+::vx}
+
+
+
+Скорость вдоль оси Ох 
 
 
 

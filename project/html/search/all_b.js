@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['spr_28',['spr',['../classenemy.html#acf328c4c9c0da589e9f82e29271ee4ef',1,'enemy::spr()'],['../classhero.html#abdf36f1a83677b5a2b6475df5fb29adc',1,'hero::spr()']]],
-  ['stuckx_29',['StuckX',['../classenemy.html#abc44fb8afad7c5d06b674464e95f1353',1,'enemy::StuckX()'],['../classhero.html#a9abeac21e41ee06314b4325e1697c4ce',1,'hero::StuckX()'],['../classhero.html#a9abeac21e41ee06314b4325e1697c4ce',1,'hero::StuckX()']]],
-  ['stucky_30',['StuckY',['../classhero.html#ae177720bf6c3aa830e9095a3a6970c60',1,'hero::StuckY()'],['../classhero.html#ae177720bf6c3aa830e9095a3a6970c60',1,'hero::StuckY()']]]
+  ['vx_25',['vx',['../classenemy.html#a58b2d640a0c2a480a0aa59a8d2e61989',1,'enemy::vx()'],['../classhero.html#a79f3a7c2bf2a8e40bc1840c4bc0502a7',1,'hero::vx()']]],
+  ['vy_26',['vy',['../classhero.html#ac9881c9f77d187cba2636f7ed355cb1a',1,'hero']]]
 ];

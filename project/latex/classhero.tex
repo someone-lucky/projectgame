@@ -2,19 +2,24 @@
 \label{classhero}\index{hero@{hero}}
 
 
+Класс главного героя  
+
+
+
+
 {\ttfamily \#include $<$hero.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classhero_a406158345894cc3018ec114b360ae380}{hero}} (Texture \&image)
-\item 
+\begin{DoxyCompactList}\small\item\em Описание основного героя \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classhero_a9abeac21e41ee06314b4325e1697c4ce}{StuckX}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Функция, отвеяающая за столкновения с объектами вдоль оси Ох \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classhero_ae177720bf6c3aa830e9095a3a6970c60}{StuckY}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Функция, отвеяающая за столкновения с объектами вдоль оси Оy. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classhero_aa65ff7ba52e653f69d9f3da422d11eca}{checkup}} (float timer)
-\item 
+\begin{DoxyCompactList}\small\item\em Функция, отвеяающая за изменения персонажа во время игры \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classhero_a406158345894cc3018ec114b360ae380}{hero}} (Texture \&image)
 \item 
 void \mbox{\hyperlink{classhero_a9abeac21e41ee06314b4325e1697c4ce}{StuckX}} ()
@@ -27,26 +32,31 @@ void \mbox{\hyperlink{classhero_aa65ff7ba52e653f69d9f3da422d11eca}{checkup}} (fl
 \begin{DoxyCompactItemize}
 \item 
 float \mbox{\hyperlink{classhero_a79f3a7c2bf2a8e40bc1840c4bc0502a7}{vx}}
-\item 
+\begin{DoxyCompactList}\small\item\em Скорость вдоль оси Оx. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classhero_ac9881c9f77d187cba2636f7ed355cb1a}{vy}}
-\item 
+\begin{DoxyCompactList}\small\item\em Скорость вдоль оси Оy. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classhero_a5290da2ea5d34cc00add698130cb5cf5}{now}}
-\item 
+\begin{DoxyCompactList}\small\item\em Переменная, отвечающая за анимацию героя \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classhero_a906a84327398e28be324bd7164531c34}{buff}}
-\item 
+\begin{DoxyCompactList}\small\item\em Добавочная скорость \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classhero_acc8f1fa7e622038de60dc482a7addb14}{g}}
-\item 
+\begin{DoxyCompactList}\small\item\em Гравитационная переменная \end{DoxyCompactList}\item 
 Float\+Rect \mbox{\hyperlink{classhero_af480ec0849ebff8c95fb2ded79e85538}{coord}}
-\item 
+\begin{DoxyCompactList}\small\item\em Содержит координаты и размеры персонажа \end{DoxyCompactList}\item 
 Sprite \mbox{\hyperlink{classhero_abdf36f1a83677b5a2b6475df5fb29adc}{spr}}
-\item 
+\begin{DoxyCompactList}\small\item\em Содержит текстуры персонажа \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classhero_a9f69ede2aaad81c9fe600463da33390a}{on}}
-\item 
+\begin{DoxyCompactList}\small\item\em Переменная, показывающая на земле ли стоит персонаж \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classhero_a2de4e4cf50eef7d8b751588f08a99f1d}{end}}
-\item 
+\begin{DoxyCompactList}\small\item\em Переменная, отвечающая за проигрыш \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Переменная, отвечающая за победу \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Класс главного героя 
+
+В нем описаны взаимдоействия героя с объектами карты, физика передвижений, анимация движений и прорисовка 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classhero_a406158345894cc3018ec114b360ae380}\label{classhero_a406158345894cc3018ec114b360ae380}} 
@@ -55,7 +65,11 @@ bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
 \doxysubsubsection{\texorpdfstring{hero()}{hero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily hero\+::hero (\begin{DoxyParamCaption}\item[{Texture \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classhero_a406158345894cc3018ec114b360ae380}\label{classhero_a406158345894cc3018ec114b360ae380}} 
+
+
+Описание основного героя 
+
+Его состояние при старте игры \mbox{\Hypertarget{classhero_a406158345894cc3018ec114b360ae380}\label{classhero_a406158345894cc3018ec114b360ae380}} 
 \index{hero@{hero}!hero@{hero}}
 \index{hero@{hero}!hero@{hero}}
 \doxysubsubsection{\texorpdfstring{hero()}{hero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -70,7 +84,11 @@ bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
 \doxysubsubsection{\texorpdfstring{checkup()}{checkup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void hero\+::checkup (\begin{DoxyParamCaption}\item[{float}]{timer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classhero_aa65ff7ba52e653f69d9f3da422d11eca}\label{classhero_aa65ff7ba52e653f69d9f3da422d11eca}} 
+
+
+Функция, отвеяающая за изменения персонажа во время игры 
+
+Данная функция отвечает за передвижение, смену кадров при движении \mbox{\Hypertarget{classhero_aa65ff7ba52e653f69d9f3da422d11eca}\label{classhero_aa65ff7ba52e653f69d9f3da422d11eca}} 
 \index{hero@{hero}!checkup@{checkup}}
 \index{checkup@{checkup}!hero@{hero}}
 \doxysubsubsection{\texorpdfstring{checkup()}{checkup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -82,7 +100,11 @@ bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
 \doxysubsubsection{\texorpdfstring{StuckX()}{StuckX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void hero\+::\+StuckX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classhero_a9abeac21e41ee06314b4325e1697c4ce}\label{classhero_a9abeac21e41ee06314b4325e1697c4ce}} 
+
+
+Функция, отвеяающая за столкновения с объектами вдоль оси Ох 
+
+В данной функции рассматриваются столкновения со стенами, а также различными игровыми объектами, по типу бонусов \mbox{\Hypertarget{classhero_a9abeac21e41ee06314b4325e1697c4ce}\label{classhero_a9abeac21e41ee06314b4325e1697c4ce}} 
 \index{hero@{hero}!StuckX@{StuckX}}
 \index{StuckX@{StuckX}!hero@{hero}}
 \doxysubsubsection{\texorpdfstring{StuckX()}{StuckX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -94,7 +116,11 @@ bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
 \doxysubsubsection{\texorpdfstring{StuckY()}{StuckY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void hero\+::\+StuckY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classhero_ae177720bf6c3aa830e9095a3a6970c60}\label{classhero_ae177720bf6c3aa830e9095a3a6970c60}} 
+
+
+Функция, отвеяающая за столкновения с объектами вдоль оси Оy. 
+
+В данной функции рассматриваются столкновения с потолком и полом \mbox{\Hypertarget{classhero_ae177720bf6c3aa830e9095a3a6970c60}\label{classhero_ae177720bf6c3aa830e9095a3a6970c60}} 
 \index{hero@{hero}!StuckY@{StuckY}}
 \index{StuckY@{StuckY}!hero@{hero}}
 \doxysubsubsection{\texorpdfstring{StuckY()}{StuckY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -109,11 +135,19 @@ bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
 \doxysubsubsection{\texorpdfstring{buff}{buff}}
 {\footnotesize\ttfamily float hero\+::buff}
 
-\mbox{\Hypertarget{classhero_af480ec0849ebff8c95fb2ded79e85538}\label{classhero_af480ec0849ebff8c95fb2ded79e85538}} 
+
+
+Добавочная скорость 
+
+Её можно получить при определенных условиях во время игры \mbox{\Hypertarget{classhero_af480ec0849ebff8c95fb2ded79e85538}\label{classhero_af480ec0849ebff8c95fb2ded79e85538}} 
 \index{hero@{hero}!coord@{coord}}
 \index{coord@{coord}!hero@{hero}}
 \doxysubsubsection{\texorpdfstring{coord}{coord}}
 {\footnotesize\ttfamily Float\+Rect hero\+::coord}
+
+
+
+Содержит координаты и размеры персонажа 
 
 \mbox{\Hypertarget{classhero_a2de4e4cf50eef7d8b751588f08a99f1d}\label{classhero_a2de4e4cf50eef7d8b751588f08a99f1d}} 
 \index{hero@{hero}!end@{end}}
@@ -121,11 +155,19 @@ bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
 \doxysubsubsection{\texorpdfstring{end}{end}}
 {\footnotesize\ttfamily bool hero\+::end}
 
+
+
+Переменная, отвечающая за проигрыш 
+
 \mbox{\Hypertarget{classhero_acc8f1fa7e622038de60dc482a7addb14}\label{classhero_acc8f1fa7e622038de60dc482a7addb14}} 
 \index{hero@{hero}!g@{g}}
 \index{g@{g}!hero@{hero}}
 \doxysubsubsection{\texorpdfstring{g}{g}}
 {\footnotesize\ttfamily float hero\+::g}
+
+
+
+Гравитационная переменная 
 
 \mbox{\Hypertarget{classhero_a5290da2ea5d34cc00add698130cb5cf5}\label{classhero_a5290da2ea5d34cc00add698130cb5cf5}} 
 \index{hero@{hero}!now@{now}}
@@ -133,11 +175,19 @@ bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
 \doxysubsubsection{\texorpdfstring{now}{now}}
 {\footnotesize\ttfamily float hero\+::now}
 
+
+
+Переменная, отвечающая за анимацию героя 
+
 \mbox{\Hypertarget{classhero_a9f69ede2aaad81c9fe600463da33390a}\label{classhero_a9f69ede2aaad81c9fe600463da33390a}} 
 \index{hero@{hero}!on@{on}}
 \index{on@{on}!hero@{hero}}
 \doxysubsubsection{\texorpdfstring{on}{on}}
 {\footnotesize\ttfamily bool hero\+::on}
+
+
+
+Переменная, показывающая на земле ли стоит персонаж 
 
 \mbox{\Hypertarget{classhero_abdf36f1a83677b5a2b6475df5fb29adc}\label{classhero_abdf36f1a83677b5a2b6475df5fb29adc}} 
 \index{hero@{hero}!spr@{spr}}
@@ -145,11 +195,19 @@ bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
 \doxysubsubsection{\texorpdfstring{spr}{spr}}
 {\footnotesize\ttfamily Sprite hero\+::spr}
 
+
+
+Содержит текстуры персонажа 
+
 \mbox{\Hypertarget{classhero_a79f3a7c2bf2a8e40bc1840c4bc0502a7}\label{classhero_a79f3a7c2bf2a8e40bc1840c4bc0502a7}} 
 \index{hero@{hero}!vx@{vx}}
 \index{vx@{vx}!hero@{hero}}
 \doxysubsubsection{\texorpdfstring{vx}{vx}}
 {\footnotesize\ttfamily float hero\+::vx}
+
+
+
+Скорость вдоль оси Оx. 
 
 \mbox{\Hypertarget{classhero_ac9881c9f77d187cba2636f7ed355cb1a}\label{classhero_ac9881c9f77d187cba2636f7ed355cb1a}} 
 \index{hero@{hero}!vy@{vy}}
@@ -157,11 +215,19 @@ bool \mbox{\hyperlink{classhero_a77735b23c9d33b4eff3528c9e673af63}{win}}
 \doxysubsubsection{\texorpdfstring{vy}{vy}}
 {\footnotesize\ttfamily float hero\+::vy}
 
+
+
+Скорость вдоль оси Оy. 
+
 \mbox{\Hypertarget{classhero_a77735b23c9d33b4eff3528c9e673af63}\label{classhero_a77735b23c9d33b4eff3528c9e673af63}} 
 \index{hero@{hero}!win@{win}}
 \index{win@{win}!hero@{hero}}
 \doxysubsubsection{\texorpdfstring{win}{win}}
 {\footnotesize\ttfamily bool hero\+::win}
+
+
+
+Переменная, отвечающая за победу 
 
 
 

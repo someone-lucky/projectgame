@@ -3,8 +3,12 @@
 #endif
 #include <SFML/Graphics.hpp>
 using namespace sf;
+//! Высота карты
 const int hm = 23;
+//! Длина карты
 const int lm = 36;
+//! Каркас карты
+/*! Он представлен в виде матрицы, составленной из различных букв */
 String  FrameMap[hm] {
         "A                                  A",
         "A                                  A",
