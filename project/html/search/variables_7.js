@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['now_50',['now',['../classenemy.html#a601309c35dbaad58879f0f7f5fa7940c',1,'enemy::now()'],['../classhero.html#a5290da2ea5d34cc00add698130cb5cf5',1,'hero::now()']]]
+  ['max_62',['max',['../class_health_bar.html#a14a60d37c0e2d4c89fe7001ffd52fc11',1,'HealthBar']]]
 ];

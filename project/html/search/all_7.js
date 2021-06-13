@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_17',['main',['../game_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'game.cpp']]],
-  ['map_2eh_18',['map.h',['../map_8h.html',1,'']]]
+  ['living_20',['living',['../classenemy.html#a7d56cc86432c09516f01f581045c7a1a',1,'enemy']]],
+  ['lm_21',['lm',['../map_8h.html#ae13ffc9c45cd9bf060a4ad0f1e1f4bbb',1,'map.h']]]
 ];

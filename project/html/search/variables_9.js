@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spr_52',['spr',['../classenemy.html#acf328c4c9c0da589e9f82e29271ee4ef',1,'enemy::spr()'],['../classhero.html#abdf36f1a83677b5a2b6475df5fb29adc',1,'hero::spr()']]]
+  ['on_64',['on',['../classhero.html#a9f69ede2aaad81c9fe600463da33390a',1,'hero']]]
 ];
