@@ -76,28 +76,28 @@ include CMakeFiles/project.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/project.dir/flags.make
 
-CMakeFiles/project.dir/main.cpp.obj: CMakeFiles/project.dir/flags.make
-CMakeFiles/project.dir/main.cpp.obj: CMakeFiles/project.dir/includes_CXX.rsp
-CMakeFiles/project.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\66236\CLionProjects\projectgame\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project.dir/main.cpp.obj"
-	C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\main.cpp.obj -c C:\Users\66236\CLionProjects\projectgame\project\main.cpp
+CMakeFiles/project.dir/game.cpp.obj: CMakeFiles/project.dir/flags.make
+CMakeFiles/project.dir/game.cpp.obj: CMakeFiles/project.dir/includes_CXX.rsp
+CMakeFiles/project.dir/game.cpp.obj: ../game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\66236\CLionProjects\projectgame\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project.dir/game.cpp.obj"
+	C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\project.dir\game.cpp.obj -c C:\Users\66236\CLionProjects\projectgame\project\game.cpp
 
-CMakeFiles/project.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/main.cpp.i"
-	C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\66236\CLionProjects\projectgame\project\main.cpp > CMakeFiles\project.dir\main.cpp.i
+CMakeFiles/project.dir/game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/game.cpp.i"
+	C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\66236\CLionProjects\projectgame\project\game.cpp > CMakeFiles\project.dir\game.cpp.i
 
-CMakeFiles/project.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/main.cpp.s"
-	C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\66236\CLionProjects\projectgame\project\main.cpp -o CMakeFiles\project.dir\main.cpp.s
+CMakeFiles/project.dir/game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/game.cpp.s"
+	C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\66236\CLionProjects\projectgame\project\game.cpp -o CMakeFiles\project.dir\game.cpp.s
 
 # Object files for target project
 project_OBJECTS = \
-"CMakeFiles/project.dir/main.cpp.obj"
+"CMakeFiles/project.dir/game.cpp.obj"
 
 # External object files for target project
 project_EXTERNAL_OBJECTS =
 
-project.exe: CMakeFiles/project.dir/main.cpp.obj
+project.exe: CMakeFiles/project.dir/game.cpp.obj
 project.exe: CMakeFiles/project.dir/build.make
 project.exe: C:/Users/66236/Desktop/HW\ +\ Prj/AaP/SFML-2.5.1/lib/libsfml-graphics-s-d.a
 project.exe: C:/Users/66236/Desktop/HW\ +\ Prj/AaP/SFML-2.5.1/lib/libsfml-window-s-d.a

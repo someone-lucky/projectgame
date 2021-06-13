@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXE_LINKER_FLAGS "-static -static-libgcc")
 set(SFML_STATIC_LIBRARIES TRUE)
 
-add_executable(project main.cpp map.h)
+add_executable(project game.cpp map.h)
 add_subdirectory(doctest)
 
 set(SFML_DIR "C:\\Users\\66236\\Desktop\\HW + Prj\\AaP\\SFML-2.5.1\\lib\\cmake\\SFML")  #поменять на свой путь к SFML

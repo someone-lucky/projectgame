@@ -1,127 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "map.h"
+#include "hero.h"
+#include "enemy.h"
 using namespace sf;
-float camx=0, camy=23*32-500, buff=0;
-bool beg=false, win=false;
-class hero {
-private:
-    int k=0;
-public:
-    float vx,vy,now;
-    FloatRect coord;
-    Sprite spr;
-    bool on,end;
-    hero(Texture & image){
-        vx=vy=0;
-        now=0;
-        end = false;
-        spr.setTexture(image);
-        spr.setTextureRect(IntRect(10,15,50,64));
-        coord = FloatRect(64,32*20,50,64);
-    }
-    void StuckX(){
-        for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
-            for (int j=coord.left/32; j<(coord.left+coord.width)/32; j++){
-                if (FrameMap[i][j] != ' ' && FrameMap[i][j] != 'H' && FrameMap[i][j] != 'K'){
-                    if (vx>0)
-                        coord.left=j*32-coord.width;
-                    if (vx<0)
-                        coord.left=j*32+32;
-                }
-                if (FrameMap[i][j] == 'H'){
-                    buff=-0.000175;
-                    FrameMap[i][j]=' ';
-                }
-                if (FrameMap[i][j] == 'K'){
-                    win=true;
-                    FrameMap[i][j]=' ';
-                }
-            }
-    }
-    void StuckY(){
-        for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
-            for (int j=coord.left/32; j<(coord.left+coord.width)/32; j++){
-                if (FrameMap[i][j] != ' ' && FrameMap[i][j] != 'H' && FrameMap[i][j] != 'K'){
-                    if (vy>=0) {
-                        coord.top = i*32-coord.height;
-                        vy = 0;
-                        on = true;
-                    }
-                    if (vy<0 && k==0) {
-                        coord.top = i*32+32;
-                        k++;
-                    }
-                }
-            }
-        k=0;
-    }
-    void checkup(float timer){
-        if (!end) {
-            coord.left += vx * timer;
-            StuckX();
-            if (!on)
-                vy = vy + 0.0000000005 * timer;
-            coord.top += vy * timer;
-            on = false;
-            StuckY();
-            now += 0.00001 * timer;
-            if (now > 4)
-                now -= 4;
-            if (vx > 0)
-                spr.setTextureRect(IntRect(10 + 50 * int(now), 15, 50, 64));
-            if (vx < 0)
-                spr.setTextureRect(IntRect(60 + 50 * int(now), 15, -50, 64));
-            spr.setPosition(coord.left - camx, coord.top - camy);
-            vx = 0;
-        }
-    }
-};
-class enemy {
-public:
-    float vx, now;
-    FloatRect coord;
-    Sprite spr;
-    bool living;
-    enemy(Texture &image) {
-        vx =  0.0002;
-        now = 0;
-        living = true;
-        spr.setTexture(image);
-        spr.setTextureRect(IntRect(0, 10, 27, 38));
-        coord = FloatRect(32*25, 32*20+27, 27, 38);
-    }
-    void StuckX(){
-        for (int i=coord.top/32; i<(coord.top+coord.height)/32; i++)
-            for (int j=coord.left/32; j<(coord.left+coord.width)/32; j++){
-                if (FrameMap[i][j] == 'A' || FrameMap[i][j] == 'D' || FrameMap[i][j] == 'C'){
-                    if (vx>0) {
-                        coord.left = j * 32 - coord.width;
-                    }
-                    if (vx<0) {
-                        coord.left = j * 32 + 32;
-                    }
-                }
-            }
-    }
-    void checkup(float timer) {
-        coord.left += vx * timer;
-        StuckX();
-        if (coord.left+coord.width >= 32*35)
-            vx=-0.0002;
-        if (coord.left <= 19*32)
-            vx=0.0002;
-        now += 0.00001 * timer;
-        if (now > 4)
-            now -= 4;
-        if (vx > 0)
-            spr.setTextureRect(IntRect( 45 * int(now), 10, 45, 38));
-        if (vx < 0)
-            spr.setTextureRect(IntRect(45 + 45 * int(now), 10, -45, 38));
-        if (!living)
-            spr.setTextureRect(IntRect(0, 0, 0, 0));
-        spr.setPosition(coord.left - camx,coord.top - camy);
-    }
-};
+bool beg=false;
 int main() {
     RenderWindow scrn(VideoMode(500,500), "Game");
     Image heroim, evilim;
@@ -174,7 +56,7 @@ int main() {
         }
         if (Keyboard::isKeyPressed(Keyboard::Space ) || Keyboard::isKeyPressed(Keyboard::W) || Keyboard::isKeyPressed(Keyboard::Up)){
             if (h.on){
-                h.vy=-0.0002+buff;
+                h.vy=-0.0002+h.buff;
                 h.on = false;
             }
         }
@@ -187,7 +69,7 @@ int main() {
             scrn.display();
         }
         if (beg){
-            if (!win){
+            if (!h.win){
                 h.checkup(timer);
                 evil.checkup(timer);
                 if ((h.coord.left>250) && (h.coord.left<36*32-250))
@@ -239,7 +121,7 @@ int main() {
                 }
                 scrn.display();
             }
-            if (win){
+            if (h.win){
                 scrn.clear(Color::Blue);
                 scrn.draw(wtxt);
                 scrn.display();

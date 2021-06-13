@@ -168,32 +168,32 @@ doctest/fast:
 	$(MAKE) $(MAKESILENT) -f doctest\CMakeFiles\doctest.dir\build.make doctest/CMakeFiles/doctest.dir/build
 .PHONY : doctest/fast
 
-main.obj: main.cpp.obj
+game.obj: game.cpp.obj
 
-.PHONY : main.obj
+.PHONY : game.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/game.cpp.obj
+.PHONY : game.cpp.obj
 
-main.i: main.cpp.i
+game.i: game.cpp.i
 
-.PHONY : main.i
+.PHONY : game.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.i
-.PHONY : main.cpp.i
+game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/game.cpp.i
+.PHONY : game.cpp.i
 
-main.s: main.cpp.s
+game.s: game.cpp.s
 
-.PHONY : main.s
+.PHONY : game.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.s
-.PHONY : main.cpp.s
+game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/game.cpp.s
+.PHONY : game.cpp.s
 
 # Help Target
 help:
@@ -206,9 +206,9 @@ help:
 	@echo ... doctest
 	@echo ... project
 	@echo ... tests
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... game.obj
+	@echo ... game.i
+	@echo ... game.s
 .PHONY : help
 
 
