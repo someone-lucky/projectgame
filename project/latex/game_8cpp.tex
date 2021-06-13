@@ -1,0 +1,172 @@
+\hypertarget{game_8cpp}{}\doxysection{C\+:/\+Users/66236/\+CLion\+Projects/projectgame/project/game.cpp File Reference}
+\label{game_8cpp}\index{C:/Users/66236/CLionProjects/projectgame/project/game.cpp@{C:/Users/66236/CLionProjects/projectgame/project/game.cpp}}
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}map.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hero.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}enemy.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Основная функция игры \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{game_8cpp_afb93e2db80e5fc5b682d08d825d9ba50}{beg}} = false
+\begin{DoxyCompactList}\small\item\em Переменная, отвечающая за начало игры \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{game_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{game_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{game.cpp@{game.cpp}!main@{main}}
+\index{main@{main}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Основная функция игры 
+
+В данной функции описана сама игра, в том числе взаимодествие персонажей между собой и игрока с главным героем. Она отвечает за старт и конец игры 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Image heroim, evilim;}
+
+\end{DoxyCode}
+
+
+Изображения персонажей.
+
+Переменные, в которых содержится изображения главного героя и противника
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Image block1;}
+
+\end{DoxyCode}
+
+
+Изображения блоков карты.
+
+Переменная, в которых содержится изображения объектов карты
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Texture texture, texture1;}
+
+\end{DoxyCode}
+
+
+Текстуры персонажей.
+
+Переменные, в которых загружаются изображения главного героя и противника
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Texture t1;}
+
+\end{DoxyCode}
+
+
+Текстуры блоков карты.
+
+Переменные, в которых загружаются изображения объектов карты
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Sprite bs1;}
+
+\end{DoxyCode}
+
+
+Спрайт блоков карты.
+
+Переменные, в которых загружаются текстуры объектов карты, с ним в основном уже и работают в коде
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classhero}{hero}} h(texture);}
+\DoxyCodeLine{\mbox{\hyperlink{classenemy}{enemy}} evil(texture1);}
+
+\end{DoxyCode}
+
+
+Игрок и враг.
+
+Основные персонажы, описанные в соответствующих классах
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Clock tik;}
+
+\end{DoxyCode}
+
+
+Время с начала игры.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Font font, font2;}
+
+\end{DoxyCode}
+
+
+Два вида шрифвтов для текстов в игре.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Text losttxt(\textcolor{stringliteral}{"{}You lost\(\backslash\)n Unlucky:("{}}, font, 50);}
+
+\end{DoxyCode}
+
+
+Текст, который выводится при проигрыше.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Text wtxt(\textcolor{stringliteral}{"{}You WON!?\(\backslash\)n o\_O\(\backslash\)nGtatz!:)"{}}, font, 50);}
+
+\end{DoxyCode}
+
+
+Текст, который выводится при победе.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Text txt(\textcolor{stringliteral}{"{}...:)"{}}, font2, 20);}
+
+\end{DoxyCode}
+
+
+Текст, который выводится при старте игры.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{float} timer = tik.getElapsedTime().asMicroseconds();}
+
+\end{DoxyCode}
+
+
+Счетчик времени, который измеряется в милисикундах
+
+get\+Elapsed\+Time() -\/ позволяет показывать время от его рестарта
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Event ev;}
+
+\end{DoxyCode}
+
+
+Определяет системные события и его параметры
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{game_8cpp_afb93e2db80e5fc5b682d08d825d9ba50}\label{game_8cpp_afb93e2db80e5fc5b682d08d825d9ba50}} 
+\index{game.cpp@{game.cpp}!beg@{beg}}
+\index{beg@{beg}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{beg}{beg}}
+{\footnotesize\ttfamily bool beg = false}
+
+
+
+Переменная, отвечающая за начало игры 
+

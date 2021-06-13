@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="doctest"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\doctest\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\Desktop\;CMake Files\..\..\..\Desktop\HW + Prj\;CMake Files\..\..\..\Desktop\HW + Prj\AaP\;CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\;CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\lib\;CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\lib\cmake\;CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\lib\cmake\SFML\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tests">
+				<Option output="C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/tests.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSFML_STATIC"/>
+					<Add directory="C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/include"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 tests"/>
+					<CompileFile command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tests/fast">
+				<Option output="C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/tests.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSFML_STATIC"/>
+					<Add directory="C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/include"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 tests/fast"/>
+					<CompileFile command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="doctest">
+				<Option output="C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/libdoctest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/66236/CLionProjects/projectgame/project/doctest"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 doctest"/>
+					<CompileFile command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="doctest/fast">
+				<Option output="C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/libdoctest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/66236/CLionProjects/projectgame/project/doctest"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 doctest/fast"/>
+					<CompileFile command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug/doctest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/doctest/doctest.cpp">
+			<Option target="doctest"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/doctest/doctest.h">
+			<Option target="doctest"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/doctest/tests_main.cpp">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/doctest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\doctest\"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/../../../Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/../../../Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/../../../Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/../../../Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML/SFMLStaticTargets-debug.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/../../../Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML/SFMLStaticTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="C:/Users/66236/CLionProjects/projectgame/project/../../../Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML/SFMLStaticTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\Desktop\HW + Prj\AaP\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

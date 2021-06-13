@@ -4,39 +4,116 @@
 #include "enemy.h"
 
 using namespace sf;
+//! Переменная, отвечающая за начало игры
+
 bool beg = false;
 
+//! Основная функция игры
+/*! В данной функции описана сама игра, в том числе взаимодествие персонажей между собой и игрока с главным героем. Она отвечает за старт и конец игры */
 int main() {
     RenderWindow scrn(VideoMode(500, 500), "Game");
+/**
+@code
+    Image heroim, evilim;
+@endcode
+ */
+//! Изображения персонажей.
+/*! Переменные, в которых содержится изображения главного героя и противника */
     Image heroim, evilim;
     heroim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\main.png");
     heroim.createMaskFromColor(Color(229, 159, 159));
     evilim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\evil.png");
     evilim.createMaskFromColor(Color(255, 255, 255));
+/**
+@code
+    Image block1;
+@endcode
+*/
+//! Изображения блоков карты.
+/*! Переменная, в которых содержится изображения объектов карты */
     Image block1;
     block1.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\Industrial.png");
     block1.createMaskFromColor(Color(255, 255, 255));
+/**
+@code
+    Texture texture, texture1;
+@endcode
+*/
+//! Текстуры персонажей.
+/*! Переменные, в которых загружаются изображения главного героя и противника */
     Texture texture, texture1;
     texture.loadFromImage(heroim);
     texture1.loadFromImage(evilim);
+/**
+@code
+    Texture t1;
+@endcode
+*/
+//! Текстуры блоков карты.
+/*! Переменные, в которых загружаются изображения объектов карты */
     Texture t1;
     t1.loadFromImage(block1);
+/**
+@code
+    Sprite bs1;
+@endcode
+*/
+//! Спрайт блоков карты.
+/*! Переменные, в которых загружаются текстуры объектов карты, с ним в основном уже и работают в коде */
     Sprite bs1;
     bs1.setTexture(t1);
+/**
+@code
     hero h(texture);
     enemy evil(texture1);
+@endcode
+*/
+//! Игрок и враг.
+/*! Основные персонажы, описанные в соответствующих классах */
+    hero h(texture);
+    enemy evil(texture1);
+ /**
+@code
     Clock tik;
+@endcode
+*/
+//! Время с начала игры.
+    Clock tik;
+/**
+@code
+    Font font, font2;
+@endcode
+*/
+//! Два вида шрифвтов для текстов в игре.
     Font font, font2;
     font.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\font.TTF");
     font2.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\begin.TTF");
+/**
+@code
+    Text losttxt("You lost\n Unlucky:(", font, 50);
+@endcode
+*/
+//! Текст, который выводится при проигрыше.
     Text losttxt("You lost\n Unlucky:(", font, 50);
     losttxt.setColor(Color::White);
     losttxt.setStyle(Text::Bold);
     losttxt.setPosition(h.coord.left, h.coord.left);
+/**
+@code
+    Text wtxt("You WON!?\n o_O\nGtatz!:)", font, 50);
+@endcode
+*/
+//! Текст, который выводится при победе.
     Text wtxt("You WON!?\n o_O\nGtatz!:)", font, 50);
     wtxt.setColor(Color::White);
     wtxt.setStyle(Text::Bold);
     wtxt.setPosition(h.coord.left, h.coord.left);
+/**
+@code
+    Text txt("...:)", font2, 20);
+@endcode
+*/
+//! Текст, который выводится при старте игры.
     Text txt(
             "Your task is to pick up the dollar\n on the top of the map\n good luck:)\n\n\n\n\n\n\n\n\n\n\n\n\n(P.S. press Enter)",
             font2, 20);
@@ -44,8 +121,21 @@ int main() {
     txt.setStyle(Text::Bold);
     txt.setPosition(h.coord.left, h.coord.left);
     while (scrn.isOpen()) {
+/**
+@code
+    float timer = tik.getElapsedTime().asMicroseconds();
+@endcode
+*/
+//! Счетчик времени, который измеряется в милисикундах
+/*! getElapsedTime() - позволяет показывать время от его рестарта*/
         float timer = tik.getElapsedTime().asMicroseconds();
         tik.restart();
+/**
+@code
+    Event ev;
+@endcode
+*/
+//! Определяет системные события и его параметры
         Event ev;
         while (scrn.pollEvent(ev)) {
             if (ev.type == Event::Closed)
