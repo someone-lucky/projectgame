@@ -96,7 +96,7 @@ int main() {
 */
 //! Текст, который выводится при проигрыше.
     Text losttxt("You lost\n Unlucky:(", font, 50);
-    losttxt.setColor(Color::White);
+    losttxt.setFillColor(Color::White);
     losttxt.setStyle(Text::Bold);
     losttxt.setPosition(h.coord.left, h.coord.left);
 /**
@@ -106,7 +106,7 @@ int main() {
 */
 //! Текст, который выводится при победе.
     Text wtxt("You WON!?\n o_O\nGtatz!:)", font, 50);
-    wtxt.setColor(Color::White);
+    wtxt.setFillColor(Color::White);
     wtxt.setStyle(Text::Bold);
     wtxt.setPosition(h.coord.left, h.coord.left);
 /**
@@ -118,7 +118,7 @@ int main() {
     Text txt(
             "Your task is to pick up the dollar\n on the top of the map\n good luck:)\n\n\n\n\n\n\n\n\n\n\n\n\n(P.S. press Enter)",
             font2, 20);
-    txt.setColor(Color::Black);
+    txt.setFillColor(Color::Black);
     txt.setStyle(Text::Bold);
     txt.setPosition(h.coord.left, h.coord.left);
     while (scrn.isOpen()) {
