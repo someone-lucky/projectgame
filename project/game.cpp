@@ -87,8 +87,8 @@ int main() {
 */
 //! Два вида шрифвтов для текстов в игре.
     Font font, font2;
-    font.loadFromFile("font.TTF");
-    font2.loadFromFile("begin.TTF");
+    font.loadFromFile("font.ttf");
+    font2.loadFromFile("begin.ttf");
 /**
 @code
     Text losttxt("You lost\n Unlucky:(", font, 50);

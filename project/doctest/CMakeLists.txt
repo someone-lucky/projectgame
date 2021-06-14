@@ -7,7 +7,6 @@ add_executable(tests tests_main.cpp)
 
 add_library(doctest STATIC doctest.cpp)
 find_package(SFML 2.5 REQUIRED graphics network audio window system)
-# depend on some obvious c++11 features so the dependency is transitively added dependents
 target_include_directories(doctest PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/>)
 set_target_properties(doctest PROPERTIES CXX_STANDARD 11 CXX_STANDARD_REQUIRED ON)
 
