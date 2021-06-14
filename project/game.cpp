@@ -145,8 +145,8 @@ int main() {
         scrn.setActive();
         if (Keyboard::isKeyPressed(Keyboard::D) || Keyboard::isKeyPressed(Keyboard::Right)) {  //в данной части описывается считывание клавиш
             h.vx = 0.0002;                                                                              // и что проиходит при их нажатии
-        }
-        if (Keyboard::isKeyPressed(Keyboard::A) || Keyboard::isKeyPressed(Keyboard::Left)) {
+        }                                                           //https://www.cyberforum.ru/cpp-beginners/thread1139112.html - переменные offset
+        if (Keyboard::isKeyPressed(Keyboard::A) || Keyboard::isKeyPressed(Keyboard::Left)) {   //я их немного переделал под свой код
             h.vx = -0.0002;
         }
         if (Keyboard::isKeyPressed(Keyboard::Space) || Keyboard::isKeyPressed(Keyboard::W) ||
