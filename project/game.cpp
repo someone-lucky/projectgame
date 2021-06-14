@@ -20,9 +20,9 @@ int main() {
 //! Изображения персонажей.
 /*! Переменные, в которых содержится изображения главного героя и противника */
     Image heroim, evilim;
-    heroim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\main.png");
+    heroim.loadFromFile("Main.png");
     heroim.createMaskFromColor(Color(229, 159, 159));
-    evilim.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\evil.png");
+    evilim.loadFromFile("evil.png");
     evilim.createMaskFromColor(Color(255, 255, 255));
 /**
 @code
@@ -32,7 +32,7 @@ int main() {
 //! Изображения блоков карты.
 /*! Переменная, в которых содержится изображения объектов карты */
     Image block1;
-    block1.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\Industrial.png");
+    block1.loadFromFile("Industrial.png");
     block1.createMaskFromColor(Color(255, 255, 255));
 /**
 @code
@@ -87,8 +87,8 @@ int main() {
 */
 //! Два вида шрифвтов для текстов в игре.
     Font font, font2;
-    font.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\font.TTF");
-    font2.loadFromFile("C:\\Users\\66236\\CLionProjects\\projectgame\\project\\begin.TTF");
+    font.loadFromFile("font.TTF");
+    font2.loadFromFile("begin.TTF");
 /**
 @code
     Text losttxt("You lost\n Unlucky:(", font, 50);

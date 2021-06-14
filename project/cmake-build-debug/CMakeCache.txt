@@ -14,18 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//The directory containing a CMake configuration file for Boost.
-Boost_DIR:PATH=Boost_DIR-NOTFOUND
-
-//Path to a file.
-Boost_INCLUDE_DIR:PATH=Boost_INCLUDE_DIR-NOTFOUND
-
-//Boost unit_test_framework library (debug)
-Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG:FILEPATH=Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG-NOTFOUND
-
-//Boost unit_test_framework library (release)
-Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE:FILEPATH=Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE-NOTFOUND
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/addr2line.exe
 
@@ -262,20 +250,14 @@ FLAC_LIB:FILEPATH=C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/libFLAC.a
 //Path to a library.
 FreeType_LIB:FILEPATH=C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/libfreetype.a
 
-//Value Computed by CMake
-MyGame_BINARY_DIR:STATIC=C:/Users/66236/CLionProjects/projectgame/project/cmake-build-debug
-
-//Value Computed by CMake
-MyGame_SOURCE_DIR:STATIC=C:/Users/66236/CLionProjects/projectgame/project
-
 //Path to a library.
 Ogg_LIB:FILEPATH=C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/libogg.a
 
 //Path to a library.
 OpenAL_LIB:FILEPATH=C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/libopenal32.a
 
-//The directory containing a CMake configuration file for SFML.
-SFML_DIR:PATH=SFML_DIR-NOTFOUND
+//No help, variable specified on the command line.
+SFML_DIR:UNINITIALIZED=C:\\Users\\66236\\Desktop\\HW + Prj\\AaP\\SFML-2.5.1\\lib\\cmake\\SFML
 
 //Path to a file.
 SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
@@ -306,12 +288,6 @@ project_SOURCE_DIR:STATIC=C:/Users/66236/CLionProjects/projectgame/project
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: Boost_DIR
-Boost_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG
-Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE
-Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR

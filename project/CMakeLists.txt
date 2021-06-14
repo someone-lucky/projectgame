@@ -8,7 +8,21 @@ set(SFML_STATIC_LIBRARIES TRUE)
 add_executable(project game.cpp map.h)
 add_subdirectory(doctest)
 
-set(SFML_DIR "C:\\Users\\66236\\Desktop\\HW + Prj\\AaP\\SFML-2.5.1\\lib\\cmake\\SFML")  #поменять на свой путь к SFML
+add_custom_command(TARGET project POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+        "${CMAKE_CURRENT_LIST_DIR}/Main.png" "$<TARGET_FILE_DIR:project>")
+add_custom_command(TARGET project POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+        "${CMAKE_CURRENT_LIST_DIR}/evil.png" "$<TARGET_FILE_DIR:project>")
+add_custom_command(TARGET project POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+        "${CMAKE_CURRENT_LIST_DIR}/Industrial.png" "$<TARGET_FILE_DIR:project>")
+add_custom_command(TARGET project POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+        "${CMAKE_CURRENT_LIST_DIR}/font.TTF" "$<TARGET_FILE_DIR:project>")
+add_custom_command(TARGET project POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+        "${CMAKE_CURRENT_LIST_DIR}/begin.TTF" "$<TARGET_FILE_DIR:project>")
 
 target_link_libraries(project sfml-graphics)
 

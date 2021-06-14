@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\66236\CLionProjects\projectgame\project
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DSFML_DIR=C:\\Users\\66236\\Desktop\\HW + Prj\\AaP\\SFML-2.5.1\\lib\\cmake\\SFML" -G "CodeBlocks - MinGW Makefiles" C:\Users\66236\CLionProjects\projectgame\project
 -- Found SFML 2.5.1 in C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML
 -- Found SFML 2.5.1 in C:/Users/66236/Desktop/HW + Prj/AaP/SFML-2.5.1/lib/cmake/SFML
 -- Configuring done
