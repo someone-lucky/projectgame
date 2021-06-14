@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.17)
 project(project)
 
 set(CMAKE_CXX_STANDARD 17)
-set(SFML_STATIC_LIBRARIES TRUE)
+option(SFML_STATIC_LIBRARIES "link to SFML staticly" TRUE)
 
 add_executable(project game.cpp map.h)
 add_subdirectory(doctest)
