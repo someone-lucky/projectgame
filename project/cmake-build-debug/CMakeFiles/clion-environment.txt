@@ -1,4 +1,0 @@
-ToolSet: w64 6.0 (local)@C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64
-Options: 
-
-Options:-DSFML_DIR=C:\\Users\\66236\\Desktop\\HW + Prj\\AaP\\SFML-2.5.1\\lib\\cmake\\SFML
